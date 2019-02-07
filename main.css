@@ -7,9 +7,8 @@ body {
 }
 
 header {
-    height: 68px;
+    height: 59px;
     background-image: url("images/header.jpg");
-    align-content: center;
 }
 
 nav ul {
@@ -21,29 +20,20 @@ nav ul {
 nav li {
     float: left;
     min-width: 12%;
-    max-width: 20%;
+    max-width: 18%;
 }
 
 nav a {
     display: block;
     color: white;
     text-decoration: none;
-    font-size: 21px;
     text-align: center;
-    padding: 22px;
+    font-size: 20px;
+    padding: 18px;
 }
 
 nav a:hover {
     background-color: rgba(98, 23, 45, 0.9);
-}
-
-.page-title {
-    font-size: 50px;
-    font-weight: bold;
-    padding: 8px 30px;
-    color: rgb(206, 50, 128);
-    text-decoration: none;
-    float: left;
 }
 
 .profile {
