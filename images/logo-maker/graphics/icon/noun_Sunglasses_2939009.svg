@@ -1,5 +1,12 @@
-<svg height='100px' width='100px'  fill="#000000" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" version="1.1" style="shape-rendering:geometricPrecision;text-rendering:geometricPrecision;image-rendering:optimizeQuality;" viewBox="0 0 9600 3199" x="0px" y="0px" fill-rule="evenodd" clip-rule="evenodd"><defs><style type="text/css">
-   
-    .fil0 {fill:#000000}
-   
-  </style></defs><g><path class="fil0" d="M4283 260c0,0 -2548,-568 -4214,-26 -96,217 -64,651 -64,651 696,13 287,1073 677,1698 498,638 2018,881 2873,230 855,-651 677,-1928 1162,-1826 56,12 110,12 166,0 485,-102 307,1175 1162,1826 856,651 2375,409 2873,-230 389,-626 -19,-1686 677,-1698 0,0 32,-434 -64,-651 -1666,-543 -4214,26 -4214,26 -345,0 -689,0 -1034,0z"></path></g></svg>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 24.2.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve">
+<g>
+	<path fill-rule="evenodd" clip-rule="evenodd" d="M44.615,36.047c0,0-26.542-5.917-43.896-0.271c-1,2.26-0.667,6.781-0.667,6.781
+		c7.25,0.135,2.99,11.177,7.052,17.688c5.188,6.646,21.021,9.177,29.927,2.396s7.052-20.083,12.104-19.021
+		c0.583,0.125,1.146,0.125,1.729,0c5.052-1.063,3.198,12.24,12.104,19.021c8.917,6.781,24.74,4.26,29.927-2.396
+		c4.052-6.521-0.198-17.563,7.052-17.688c0,0,0.333-4.521-0.667-6.781c-17.354-5.656-43.896,0.271-43.896,0.271
+		C51.792,36.047,48.208,36.047,44.615,36.047z"/>
+</g>
+</svg>

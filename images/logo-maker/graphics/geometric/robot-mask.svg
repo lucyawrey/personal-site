@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 144.00002 144">
+  <title>robot-mask</title>
+  <g id="shape">
+    <g>
+      <path d="M142.68889,1.02777v140h-140v-140h140m2-2h-144v144h144v-144Z"/>
+      <path d="M138.68889,5.02777v132h-132v-132h132m1-1h-134v134h134v-134Z"/>
+      <g>
+        <rect x="9.85561" y="8.19421" width="125.66699" height="125.66699"/>
+        <path d="M135.02223,8.69446V133.36108H10.35556V8.69446H135.02223m1-1H9.35556V134.36108H136.02223V7.69446Z"/>
+      </g>
+    </g>
+  </g>
+  <g id="tagline">
+    <g id="text-box">
+      <rect x="10.46945" y="12.63949" width="124" height="75.01235" fill="#29abe2"/>
+    </g>
+    <g id="tagline-2" data-name="tagline">
+      <rect x="10.46945" y="91.03704" width="124" height="35.92593" fill="#29abe2"/>
+    </g>
+  </g>
+  <g id="no-tagline">
+    <rect id="text-box-2" data-name="text-box" x="11.1889" y="13.52777" width="123" height="115" fill="#d9e021"/>
+  </g>
+</svg>
