@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 144 144">
+  <title>shape</title>
+  <g id="shape">
+    <g>
+      <path d="M142,2V142H2V2H142m2-2H0V144H144V0Z"/>
+      <path d="M138,6V138H6V6H138m1-1H5V139H139V5Z"/>
+    </g>
+  </g>
+  <g id="tagline">
+    <g id="text-box">
+      <rect x="10" y="15" width="124" height="75.01235" fill="#29abe2"/>
+    </g>
+    <g id="tagline-2" data-name="tagline">
+      <rect x="10" y="93.07407" width="124" height="35.92593" fill="#29abe2"/>
+    </g>
+  </g>
+  <g id="no-tagline">
+    <rect id="text-box-2" data-name="text-box" x="9.1875" y="15" width="126" height="115" fill="#d9e021"/>
+  </g>
+</svg>

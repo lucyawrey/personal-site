@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3477.07261 2419.29742">
+  <title>test-organic</title>
+  <g id="organic">
+    <path d="M1312.30809,2547.1113c666.7514,450.10181,1546.85476,307.2,2130.79534-235.12276,588.43185-546.49407,834.945-2129.46937-331.62647-1854.41233-450.92518,106.3203-658.00388,553.92525-1128.76024,351.82576C1594.88423,642.9023,1263.3682,341.90846,755.75126,715.50921,165.3026,1150.07323,644.99047,2096.62716,1312.30809,2547.1113Z" transform="translate(-473.73275 -410.74843)" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="30"/>
+  </g>
+  <g id="no-tagline">
+    <rect id="text-box" x="550.76725" y="283.2806" width="2375.53811" height="1756.16774" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+  </g>
+  <g id="tagline">
+    <rect id="tagline-2" data-name="tagline" x="550.76725" y="1573.37809" width="2375.53811" height="468.85621" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <rect id="text-box-2" data-name="text-box" x="550.76725" y="479.38027" width="2375.53811" height="1031.48365" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+  </g>
+</svg>

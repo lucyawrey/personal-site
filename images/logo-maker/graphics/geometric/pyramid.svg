@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 86.60254 75">
+  <title>shape</title>
+  <g id="shape">
+    <g>
+      <path d="M43.30127,4,63.21985,38.5,83.13846,73H3.46408L23.38269,38.5,43.30127,4m0-4L21.65063,37.5,0,75H86.60254L64.9519,37.5,43.30127,0Z"/>
+      <path d="M43.30127,15.71539,58.39453,41.8577,73.48779,68h-60.373L28.208,41.8577,43.30127,15.71539m0-4L26.476,40.8577,9.65063,70H76.9519L60.12659,40.8577,43.30127,11.71539Z"/>
+    </g>
+  </g>
+  <g id="tagline">
+    <g id="text-box">
+      <rect x="28.34889" y="32" width="30" height="24" fill="#29abe2"/>
+    </g>
+    <g id="tagline-2" data-name="tagline">
+      <rect x="17.34889" y="57" width="52" height="10" fill="#29abe2"/>
+    </g>
+  </g>
+  <g id="no-tagline">
+    <rect id="text-box-2" data-name="text-box" x="26.30126" y="32" width="34" height="36" fill="#d9e021"/>
+  </g>
+</svg>
