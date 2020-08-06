@@ -1,24 +1,24 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 188 118">
-  <title>shape</title>
-  <g id="shape">
-    <g>
-      <path d="M186,2V116H2V2H186m2-2H0V118H188V0Z"/>
-      <path d="M181.5,6V112H6.5V6h175m1-1H5.5V113h177V5Z"/>
-      <g>
-        <rect x="10.09711" y="9.66644" width="167.80615" height="98.66699"/>
-        <path d="M177.40277,10.16669v97.66662H10.59723V10.16669H177.40277m1-1H9.59723v99.66662H178.40277V9.16669Z"/>
-      </g>
-    </g>
-  </g>
-  <g id="tagline">
-    <g id="text-box">
-      <rect x="16.40625" y="18.27777" width="155.1875" height="52.64024" fill="#29abe2"/>
-    </g>
-    <g id="tagline-2" data-name="tagline">
-      <rect x="16.40625" y="73.06659" width="155.1875" height="25.21118" fill="#29abe2"/>
-    </g>
-  </g>
-  <g id="no-tagline">
-    <rect id="text-box-2" data-name="text-box" x="17.60248" y="16.27777" width="155" height="81" fill="#d9e021"/>
-  </g>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 24.2.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 400 400" enable-background="new 0 0 400 400" xml:space="preserve">
+<g id="Shapes">
+	<g>
+		<path d="M397.66357,316.60303H2.33643V83.39697h395.32715V316.60303z M11.33643,307.60303h377.32715V92.39697H11.33643V307.60303z
+			"/>
+	</g>
+	<g>
+		<path d="M378.64746,299.11279H21.35254V100.88721h357.29492V299.11279z M24.35254,296.11279h351.29492V103.88721H24.35254
+			V296.11279z"/>
+	</g>
+</g>
+<g id="no-tagline">
+	<rect x="34.6988" y="120.82322" width="330.60239" height="158.35356"/>
+</g>
+<g id="tagline">
+	<g>
+		<rect x="34.35644" y="121.37847" fill="#00F9FF" width="331.28714" height="106.90369"/>
+		<rect x="34.35644" y="232.28421" fill="#00F9FF" width="331.28714" height="46.33731"/>
+	</g>
+</g>
 </svg>

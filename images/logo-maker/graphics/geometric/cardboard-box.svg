@@ -12,6 +12,12 @@
 	</g>
 </g>
 <g id="no-tagline">
-	<rect x="34.6988" y="120.82322" width="330.60239" height="158.35356"/>
+	<rect x="34.6988" y="34.6988" width="330.60239" height="330.60239"/>
+</g>
+<g id="tagline">
+	<g>
+		<rect x="36.44215" y="34.6988" fill="#00F9FF" width="327.11572" height="224.76424"/>
+		<rect x="36.44215" y="267.87732" fill="#00F9FF" width="327.11572" height="97.42387"/>
+	</g>
 </g>
 </svg>
