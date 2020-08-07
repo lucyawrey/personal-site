@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 24.2.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve">
+<g display="none">
+	<g display="inline">
+		
+			<rect x="3.125" y="3.125" fill="none" stroke="#000000" stroke-width="0.1563" stroke-miterlimit="15.625" width="93.75" height="93.75"/>
+		<line fill="none" stroke="#000000" stroke-width="0.1563" stroke-miterlimit="15.625" x1="50" y1="3.125" x2="50" y2="96.875"/>
+		<line fill="none" stroke="#000000" stroke-width="0.1563" stroke-miterlimit="15.625" x1="96.875" y1="50" x2="3.125" y2="50"/>
+		
+			<line fill="none" stroke="#000000" stroke-width="0.1563" stroke-miterlimit="15.625" x1="3.125" y1="3.125" x2="96.875" y2="96.875"/>
+		
+			<rect x="15.625" y="15.625" fill="none" stroke="#000000" stroke-width="0.1563" stroke-miterlimit="15.625" width="68.75" height="68.75"/>
+		
+			<line fill="none" stroke="#000000" stroke-width="0.1563" stroke-miterlimit="15.625" x1="96.875" y1="3.125" x2="3.125" y2="96.875"/>
+		<line fill="none" stroke="#000000" stroke-width="0.1563" stroke-miterlimit="15.625" x1="3.125" y1="50" x2="50" y2="3.125"/>
+		<line fill="none" stroke="#000000" stroke-width="0.1563" stroke-miterlimit="15.625" x1="50" y1="3.125" x2="96.875" y2="50"/>
+		<line fill="none" stroke="#000000" stroke-width="0.1563" stroke-miterlimit="15.625" x1="96.875" y1="50" x2="50" y2="96.875"/>
+		<line fill="none" stroke="#000000" stroke-width="0.1563" stroke-miterlimit="15.625" x1="50" y1="96.875" x2="3.125" y2="50"/>
+		<circle fill="none" stroke="#000000" stroke-width="0.1563" stroke-miterlimit="15.625" cx="50" cy="50" r="32.813"/>
+	</g>
+</g>
+<circle cx="71.875" cy="10.938" r="1.563"/>
+<circle cx="78.125" cy="10.938" r="1.563"/>
+<circle cx="84.375" cy="10.938" r="1.563"/>
+<path d="M80.938,34.375l-22.969-6.25H6.25c-1.719,0-3.125,1.406-3.125,3.125v6.25c0,1.719,1.406,3.125,3.125,3.125h51.719
+	L80.938,34.375z M56.25,37.5H15.625v-6.25H56.25V37.5z M59.375,37.031v-5.312l9.688,2.656L59.375,37.031z M6.25,31.25h6.25v6.25
+	H6.25V31.25z"/>
+<path d="M12.5,18.75h75v38.594c1.094,0.625,2.031,1.25,3.125,2.031V3.125H9.375V25H12.5V18.75z M87.5,6.25v9.375h-75V6.25H87.5z"/>
+<path d="M87.5,93.75h-75v-50H9.375v53.125h81.25v-18.75c-1.094,0.781-2.031,1.406-3.125,2.031V93.75z"/>
+<path d="M87.5,68.594v0.469c0.156,0,0.156-0.156,0.313-0.156C87.656,68.75,87.656,68.594,87.5,68.594z"/>
+<path d="M96.406,67.5c-22.5-19.219-45.156-19.219-67.656,0l-1.406,1.25l1.25,1.25C39.844,79.531,51.25,84.375,62.5,84.375
+	S85.156,79.531,96.406,70l1.406-1.25L96.406,67.5z M32.188,68.75c20.312-16.719,40.313-16.719,60.781,0
+	C72.5,85.469,52.656,85.469,32.188,68.75z"/>
+<path d="M50,68.75c0,6.875,5.625,12.5,12.5,12.5S75,75.625,75,68.75s-5.625-12.5-12.5-12.5S50,61.875,50,68.75z M71.875,68.75
+	c0,5.156-4.219,9.375-9.375,9.375s-9.375-4.219-9.375-9.375s4.219-9.375,9.375-9.375S71.875,63.594,71.875,68.75z"/>
+</svg>
