@@ -19,7 +19,8 @@ export const heroData = {
 export const aboutData = {
   img: 'profile.jpg',
   paragraphOne: 'I am a human person.',
-  paragraphTwo: 'I am also a full stack web developer who likes to make things.',
+  paragraphTwo:
+    'I am also a full stack web developer who likes to make things. This site is very much a work in progress, have not had the time to fill out my projects yet.',
   paragraphThree: 'Check out my resume?',
   resume: 'LucyAwreyResume2020.pdf', // if no resume, the button will not show up
 };
@@ -33,7 +34,7 @@ export const projectsData = [
     info: '',
     info2: '',
     url: '',
-    repo: 'https://github.com/cobidev/react-simplefolio', // if no repo, the button will not show up
+    repo: '', // if no repo, the button will not show up
   },
   {
     id: nanoid(),
@@ -42,7 +43,7 @@ export const projectsData = [
     info: '',
     info2: '',
     url: '',
-    repo: 'https://github.com/cobidev/react-simplefolio', // if no repo, the button will not show up
+    repo: '', // if no repo, the button will not show up
   },
   {
     id: nanoid(),
@@ -51,7 +52,7 @@ export const projectsData = [
     info: '',
     info2: '',
     url: '',
-    repo: 'https://github.com/cobidev/react-simplefolio', // if no repo, the button will not show up
+    repo: '', // if no repo, the button will not show up
   },
 ];
 
@@ -68,7 +69,7 @@ export const footerData = {
     {
       id: nanoid(),
       name: 'linkedin',
-      url: 'https://www.linkedin.com/in/lucy-awrey-a40379165/',
+      url: 'https://www.linkedin.com/in/lucyawrey',
     },
     {
       id: nanoid(),
