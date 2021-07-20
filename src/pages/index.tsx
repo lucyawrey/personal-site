@@ -5,7 +5,7 @@ function Home() {
   return (
     <div className={styles.container}>
       <Head>
-        <title>Lucy Awrey`&apos;`s Personal Site</title>
+        <title>Lucy Awrey&apos;s Personal Site</title>
         <meta name="description" content="Lucy Awrey's personal site, it's currently under construction." />
         <link rel="icon" href="/favicon.ico" />
       </Head>
