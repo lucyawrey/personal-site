@@ -1,13 +1,12 @@
-import Head from "next/head"
-import Image from "next/image"
-import styles from "../styles/Home.module.scss"
+import Head from "next/head";
+import styles from "../styles/Home.module.scss";
 
 function Home() {
   return (
     <div className={styles.container}>
       <Head>
-        <title>Lucy Awrey's Personal Site</title>
-        <meta name="description" content="Lucy Awrey's personal site, it;s currently under construction." />
+        <title>Lucy Awrey`&apos;`s Personal Site</title>
+        <meta name="description" content="Lucy Awrey's personal site, it's currently under construction." />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
