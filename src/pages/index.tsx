@@ -1,22 +1,27 @@
-import Head from "next/head";
-import styles from "../styles/Home.module.scss";
+import Footer from "../components/Footer";
+import HeaderBar from "../components/HeaderBar";
+import NavMenu from "../components/NavMenu";
+import Terminal from "../components/Terminal";
+import { TerminalModel } from "../models/TerminalModel";
+
+const terminal = new TerminalModel();
 
 function Home() {
   return (
-    <div className={styles.container}>
-      <Head>
-        <title>Lucy Awrey&apos;s Personal Site</title>
-        <meta name="description" content="Lucy Awrey's personal site, it's currently under construction." />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+    <>
+      <div className="min-h-full">
+        <NavMenu />
+        <main>
+          <div className="max-w-3xl mx-auto py-6 sm:px-6 lg:px-8">
+            <Terminal model={terminal} />
+          </div>
+        </main>
+      </div>
 
-      <main className={styles.main}>
-        <h1 className={styles.title}>
-          This site is currently under construction.
-        </h1>
-      </main>
-    </div>
-  )
+      <div className="py-16"></div>
+      <Footer />
+    </>
+  );
 }
 
 export default Home;
