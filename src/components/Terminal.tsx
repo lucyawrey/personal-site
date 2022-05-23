@@ -7,6 +7,7 @@ interface TerminalProps {
 }
 
 const Terminal = observer(({ model }: TerminalProps) => {
+    const terminalRef = useRef<any>(null);
     const inputRef = useRef<any>(null);
 
     const items: JSX.Element[] = [];
@@ -22,6 +23,12 @@ const Terminal = observer(({ model }: TerminalProps) => {
             inputRef.current.focus();
             cursorEnd();
         }
+    }
+
+    function scrollBottom() {
+        setTimeout(() => {
+            terminalRef.current.scrollTop = terminalRef.current.scrollHeight;
+        }, 20)
     }
 
     function cursorEnd() {
@@ -40,6 +47,7 @@ const Terminal = observer(({ model }: TerminalProps) => {
         switch (event.key) {
             case "Enter":
                 model.submit();
+                scrollBottom();
                 break;
             case "ArrowUp":
                 model.history();
@@ -51,7 +59,7 @@ const Terminal = observer(({ model }: TerminalProps) => {
     }
 
     return (
-        <div className="terminal-scroll overflow-y-auto rounded-xl border-solid border-t-[24px] border-gray-400 p-2 w-full h-96 bg-black text-white font-mono text-xl" onClick={focus}>
+        <div className="terminal-scroll overflow-y-auto rounded-xl border-solid border-t-[24px] border-gray-400 p-2 w-full h-96 bg-black text-white font-mono text-xl" ref={terminalRef} onClick={focus}>
             {items}
 
             <span>
