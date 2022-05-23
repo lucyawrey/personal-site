@@ -51,7 +51,7 @@ const Terminal = observer(({ model }: TerminalProps) => {
     }
 
     return (
-        <div className="overflow-y-auto rounded-xl border-solid border-t-[24px] border-gray-400 p-2 w-full h-96 bg-black text-white font-mono text-xl" onClick={focus}>
+        <div className="terminal-scroll overflow-y-auto rounded-xl border-solid border-t-[24px] border-gray-400 p-2 w-full h-96 bg-black text-white font-mono text-xl" onClick={focus}>
             {items}
 
             <span>
