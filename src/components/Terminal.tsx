@@ -1,7 +1,6 @@
-import styles from "../styles/Terminal.module.css";
 import { observer } from "mobx-react-lite";
 import { TerminalModel } from "../models/TerminalModel";
-import { ChangeEvent, useRef } from "react";
+import { ChangeEvent, useRef, useState } from "react";
 
 interface TerminalProps {
     model: TerminalModel;
@@ -12,8 +11,10 @@ const Terminal = observer(({ model }: TerminalProps) => {
 
     const items: JSX.Element[] = [];
 
+    let i = 0;
     for (let line of model.lines) {
-        items.push(<><span className={styles.line}>{line}</span><br /></>);
+        items.push(<><span key={i}>{line}</span><br /></>);
+        i++;
     }
 
     function focus() {
@@ -50,12 +51,12 @@ const Terminal = observer(({ model }: TerminalProps) => {
     }
 
     return (
-        <div className={styles.terminal} onClick={focus}>
+        <div className="overflow-y-auto rounded-xl border-solid border-t-[24px] border-gray-400 p-2 w-full h-96 bg-black text-white font-mono text-xl" onClick={focus}>
             {items}
 
-            <span className={styles.line}>
+            <span>
                 &gt;&nbsp;
-                <input ref={inputRef} className={styles.input} type="text" value={model.input} onChange={change} onKeyDown={keyDown}></input>
+                <input className="bg-black w-11/12 border-none m-0 p-0 outline-none" ref={inputRef} type="text" value={model.input} onChange={change} onKeyDown={keyDown}></input>
             </span>
         </div>
     );

@@ -4,8 +4,7 @@ export class TerminalModel {
     public input: string = "";
 
     public lines: string[] = [
-        "Text Adventure Engine",
-        "(<3) Lucy Awrey",
+        "* Lucy Awrey's Personal Site *",
         "",
     ];
 
