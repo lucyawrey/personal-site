@@ -31,14 +31,11 @@ export class TerminalModel {
     }
 
     public submit() {
-        this.history.push(this.input);
+        this.historyPush(this.input);
         this.pushLine("> " + this.input);
         this.setInput("");
-        this.historyIter = this.history.length;
 
         this.sessionSave(this.history);
-
-        this.debug();
     }
 
     public historyBack() {
@@ -55,8 +52,6 @@ export class TerminalModel {
             this.historyIter--;
         }
         this.setInput(this.history[this.historyIter]);
-
-        this.debug();
     }
 
     public historyForward() {
@@ -82,6 +77,20 @@ export class TerminalModel {
 
     public pushLine(newline: string) {
         this.lines.push(newline);
+    }
+
+    private historyPush(newItem: string) {
+        if (!newItem) {
+            return;
+        }
+
+        const loc = this.history.indexOf(newItem);
+        if (loc != -1) {
+            this.history.splice(loc, 1);
+        }
+
+        this.history.push(newItem);
+        this.resetIter();
     }
 
     private sessionSave(history: string[]) {
