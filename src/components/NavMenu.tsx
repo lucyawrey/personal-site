@@ -2,9 +2,9 @@ import { Disclosure } from "@headlessui/react";
 import { CodeIcon, MenuIcon, XIcon } from "@heroicons/react/outline";
 
 const navigation = [
-  { name: "Home", href: "#", current: true },
-  { name: "Resume", href: "#", current: false },
-  { name: "Projects", href: "#", current: false },
+  { name: "Home", href: "#home", current: true },
+  { name: "Resume", href: "#resume", current: false },
+  { name: "Projects", href: "#projects", current: false },
 ]
 
 function classNames(...classes: any) {

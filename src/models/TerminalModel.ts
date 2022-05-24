@@ -14,11 +14,6 @@ export class TerminalModel {
     private history: string[] = [];
     private historyIter: number = 0;
 
-    private debug() {
-        console.clear();
-        console.log(`input: ${this.input}\ninputCache: ${this.inputCache}\ncached: ${this.cached}\ncommandLength: ${this.history.length}\ncommandIter: ${this.historyIter}\n`);
-    }
-
     constructor() {
         if (isClient()) {
             this.sessionLoad();
@@ -77,13 +72,19 @@ export class TerminalModel {
         this.input = input;
     }
 
-    public print(newline: string) {
+    public print(newline: string, ...args: any[]) {
+        if (args.length > 0) {
+            newline = format(newline, args);
+        }
         this.lines.push(newline);
     }
 
     public error(message: string, ...args: any[]) {
-        const formated = format(message, args);
-        this.print("[red]" + formated);
+        this.print("[red]" + message, args);
+    }
+
+    public clear() {
+        this.lines = [];
     }
 
     private historyPush(newline: string) {
