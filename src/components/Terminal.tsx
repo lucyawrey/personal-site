@@ -14,7 +14,13 @@ const Terminal = observer(({ model }: TerminalProps) => {
 
     let i = 1;
     for (let line of model.lines) {
-        items.push(<span className="block whitespace-pre-wrap" key={i}>{line}</span>);
+        let mod = "";
+        if (line.startsWith("[red]")) {
+            line = line.replace("[red]", "");
+            mod = " text-red-500"
+        }
+
+        items.push(<span className={"block whitespace-pre-wrap" + mod} key={i}>{line}</span>);
         i++;
     }
 
@@ -67,7 +73,7 @@ const Terminal = observer(({ model }: TerminalProps) => {
     }
 
     return (
-        <div className="terminal-scroll overflow-y-auto overflow-x-hidden rounded-xl border-solid
+        <div className="terminal-scroll overflow-y-auto overflow-x-hidden rounded-xl border-solid leading-tight
          border-gray-400 p-2 w-full h-96 bg-black text-white font-mono text-lg border-t-[24px]"
           ref={terminalRef} onClick={focus}>
             <div>

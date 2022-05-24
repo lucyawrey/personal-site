@@ -1,6 +1,7 @@
 import { makeAutoObservable } from "mobx"
 import Text from "../content/text.json";
-import { isClient } from "../utilities/state";
+import run from "../utilities/run";
+import { format, isClient } from "../utilities/helpers";
 
 export class TerminalModel {
     public input: string = "";
@@ -31,8 +32,14 @@ export class TerminalModel {
     }
 
     public submit() {
-        this.historyPush(this.input);
-        this.pushLine("> " + this.input);
+        if (this.input) {
+            const cleaned = this.input.trim();
+            this.historyPush(cleaned);
+            this.print("> " + cleaned);
+            run(cleaned, this);
+        } else {
+            this.print(">");
+        }
         this.setInput("");
 
         this.sessionSave(this.history);
@@ -70,26 +77,22 @@ export class TerminalModel {
         this.input = input;
     }
 
-    public pushCommand(newline: string) {
-        this.history.push(newline);
-        this.resetIter();
-    }
-
-    public pushLine(newline: string) {
+    public print(newline: string) {
         this.lines.push(newline);
     }
 
-    private historyPush(newItem: string) {
-        if (!newItem) {
-            return;
-        }
+    public error(message: string, ...args: any[]) {
+        const formated = format(message, args);
+        this.print("[red]" + formated);
+    }
 
-        const loc = this.history.indexOf(newItem);
+    private historyPush(newline: string) {
+        const loc = this.history.indexOf(newline);
         if (loc != -1) {
             this.history.splice(loc, 1);
         }
 
-        this.history.push(newItem);
+        this.history.push(newline);
         this.resetIter();
     }
 

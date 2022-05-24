@@ -1,5 +1,6 @@
 {
     "sessionStorageKey": "lucyawrey:terminalhistory",
+    "errorNotFound": "Command \"{}\" not found. Try typing \"help\" for a list of commands.",
     "terminalStart": "* Lucy Awrey's Personal Site *\n\n",
     "terminalHelp": "Try typing \"help\" for a list of commands.",
     "helpCommand": "Test",
