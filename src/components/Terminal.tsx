@@ -83,7 +83,7 @@ const Terminal = observer(({ model }: TerminalProps) => {
             <span>
                 &gt;&nbsp;
                 <input className="bg-black w-[90%] border-none m-0 p-0 outline-none"
-                 ref={inputRef} type="text" value={model.input} onChange={change} onKeyDown={keyDown}></input>
+                 ref={inputRef} type="text" value={model.input} onChange={change} onKeyDown={keyDown} autocorrect="off" autocapitalize="off" />
             </span>
         </div>
     );
