@@ -8,3 +8,8 @@ export function format(text: string, ...args: any[]) {
     };
     return text;
 }
+
+export function jump(header: string){
+    const url = location.href;
+    location.href = "#" + header;
+}

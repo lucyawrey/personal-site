@@ -1,13 +1,12 @@
 interface FooterProps {
+  id: string;
   children: React.ReactNode;
 }
 
-function HeaderBar({ children }: FooterProps) {
+function HeaderBar({ id, children }: FooterProps) {
   return (
-    <header className="bg-white shadow">
-      <div className="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-        <h1 className="text-2xl font-bold text-gray-900 text-center">{ children }</h1>
-      </div>
+    <header className="py-6 border-dashed border-b-2 border-gray-500 mb-4">
+      <h1 id={id} className="text-2xl font-bold text-gray-900 text-center">{ children }</h1>
     </header>
   )
 }
