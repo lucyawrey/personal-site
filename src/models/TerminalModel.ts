@@ -1,37 +1,74 @@
 import { makeAutoObservable } from "mobx"
+import Text from "../content/text.json";
+import { isClient } from "../utilities/state";
 
 export class TerminalModel {
     public input: string = "";
 
-    public lines: string[] = [
-        "* Lucy Awrey's Personal Site *",
-        "",
-    ];
+    public lines: string[] = [Text.terminalStart];
 
-    private commands: string[] = [];
+    private inputCache: string = "";
+    private cached: boolean = false;
 
-    private commandIter: number = 0;
+    private history: string[] = [];
+    private historyIter: number = 0;
+
+    private debug() {
+        console.clear();
+        console.log(`input: ${this.input}\ninputCache: ${this.inputCache}\ncached: ${this.cached}\ncommandLength: ${this.history.length}\ncommandIter: ${this.historyIter}\n`);
+    }
 
     constructor() {
+        if (isClient()) {
+            this.sessionLoad();
+        }
+
         makeAutoObservable(this);
     }
 
     public resetIter() {
-        this.commandIter = this.commands.length - 1;
+        this.historyIter = this.history.length;
     }
 
     public submit() {
-        this.commands.push(this.input);
+        this.history.push(this.input);
         this.pushLine("> " + this.input);
         this.setInput("");
-        this.commandIter = this.commands.length - 1;
+        this.historyIter = this.history.length;
+
+        this.sessionSave(this.history);
+
+        this.debug();
     }
 
-    public history() {
-        if (this.commandIter < 0)
+    public historyBack() {
+        if (this.history.length == 0) {
             return;
-        this.setInput(this.commands[this.commandIter]);
-        this.commandIter--;
+        }
+
+        if (!this.cached) {
+            this.inputCache = this.input;
+            this.cached = true;
+        }
+
+        if (this.historyIter != 0) {
+            this.historyIter--;
+        }
+        this.setInput(this.history[this.historyIter]);
+
+        this.debug();
+    }
+
+    public historyForward() {
+        if (this.historyIter < this.history.length - 1) {
+            this.historyIter++;
+            this.setInput(this.history[this.historyIter]);
+        } else if (this.historyIter < this.history.length) {
+            this.historyIter++;
+            this.setInput(this.inputCache);
+            this.inputCache = "";
+            this.cached = false;
+        }
     }
 
     public setInput(input: string) {
@@ -39,11 +76,25 @@ export class TerminalModel {
     }
 
     public pushCommand(newline: string) {
-        this.commands.push(newline);
+        this.history.push(newline);
         this.resetIter();
     }
 
     public pushLine(newline: string) {
         this.lines.push(newline);
+    }
+
+    private sessionSave(history: string[]) {
+        const json = JSON.stringify(history);
+        sessionStorage.setItem(Text.sessionStorageKey, json)
+    }
+
+    private sessionLoad(): string[] {
+        let json = sessionStorage.getItem(Text.sessionStorageKey);
+        if (json) {
+            this.history = JSON.parse(json);
+            this.resetIter();
+        }
+        return [];
     }
 }
