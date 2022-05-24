@@ -1,6 +1,6 @@
 import { observer } from "mobx-react-lite";
 import { TerminalModel } from "../models/TerminalModel";
-import { ChangeEvent, useRef, useState } from "react";
+import { ChangeEvent, useRef } from "react";
 
 interface TerminalProps {
     model: TerminalModel;
@@ -12,9 +12,9 @@ const Terminal = observer(({ model }: TerminalProps) => {
 
     const items: JSX.Element[] = [];
 
-    let i = 0;
+    let i = 1;
     for (let line of model.lines) {
-        items.push(<><span key={i}>{line}</span><br /></>);
+        items.push(<span className="block whitespace-pre-wrap" key={i}>{line}</span>);
         i++;
     }
 
@@ -26,20 +26,24 @@ const Terminal = observer(({ model }: TerminalProps) => {
     }
 
     function scrollBottom() {
-        setTimeout(() => {
-            terminalRef.current.scrollTop = terminalRef.current.scrollHeight;
-        }, 20)
+        if (terminalRef.current) {
+            setTimeout(() => {
+                terminalRef.current.scrollTop = terminalRef.current.scrollHeight;
+            }, 10)
+        }
     }
 
     function cursorEnd() {
-        if (inputRef.current) {
-            inputRef.current.selectionStart = model.input.length;
-            inputRef.current.selectionEnd = model.input.length;
+        if (model.input && inputRef.current) {
+            setTimeout(() => {
+                inputRef.current.selectionStart = model.input.length;
+                inputRef.current.selectionEnd = model.input.length;
+            }, 10)
         }
     }
 
     function change(event: ChangeEvent<HTMLInputElement>) {
-        model.setInput(event.target.value)
+        model.setInput(event.target.value);
         model.resetIter();
     }
 
@@ -50,8 +54,12 @@ const Terminal = observer(({ model }: TerminalProps) => {
                 scrollBottom();
                 break;
             case "ArrowUp":
-                model.history();
-                cursorEnd();
+                event.preventDefault()
+                model.historyBack();
+                break;
+            case "ArrowDown":
+                event.preventDefault()
+                model.historyForward();
                 break;
             default:
                 return;
@@ -59,12 +67,17 @@ const Terminal = observer(({ model }: TerminalProps) => {
     }
 
     return (
-        <div className="terminal-scroll overflow-y-auto rounded-xl border-solid border-t-[24px] border-gray-400 p-2 w-full h-96 bg-black text-white font-mono text-xl" ref={terminalRef} onClick={focus}>
+        <div className="terminal-scroll overflow-y-auto overflow-x-hidden rounded-xl border-solid
+         border-gray-400 p-2 w-full h-96 bg-black text-white font-mono text-lg border-t-[24px]"
+          ref={terminalRef} onClick={focus}>
+            <div>
             {items}
+            </div>
 
             <span>
                 &gt;&nbsp;
-                <input className="bg-black w-11/12 border-none m-0 p-0 outline-none" ref={inputRef} type="text" value={model.input} onChange={change} onKeyDown={keyDown}></input>
+                <input className="bg-black w-[95%] border-none m-0 p-0 outline-none"
+                 ref={inputRef} type="text" value={model.input} onChange={change} onKeyDown={keyDown}></input>
             </span>
         </div>
     );
