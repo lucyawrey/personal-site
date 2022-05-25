@@ -73,17 +73,16 @@ const Terminal = observer(({ model }: TerminalProps) => {
     }
 
     return (
-        <div className="terminal-scroll overflow-y-auto overflow-x-hidden rounded-xl border-solid leading-tight
-         border-gray-400 p-2 w-full h-96 bg-black text-white font-mono md:text-lg  border-t-[24px]"
-          ref={terminalRef} onClick={focus}>
+        <div className="terminal-scroll overflow-y-auto overflow-x-hidden rounded-xl border-solid leading-tight border-gray-400
+        p-2 w-full h-96 bg-black text-white font-mono md:text-lg  border-t-[24px]" ref={terminalRef} onClick={focus}>
             <div>
             {items}
             </div>
 
             <span>
                 &gt;&nbsp;
-                <input className="bg-black w-[90%] border-none m-0 p-0 outline-none"
-                 ref={inputRef} type="text" value={model.input} onChange={change} onKeyDown={keyDown} autocorrect="off" autocapitalize="off" />
+                <input className="bg-black w-[90%] border-none m-0 p-0 outline-none" ref={inputRef} type="text"
+                value={model.input} onChange={change} onKeyDown={keyDown} autoCorrect="off" autoCapitalize="off" />
             </span>
         </div>
     );
