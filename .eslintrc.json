@@ -15,7 +15,6 @@
   "rules": {
     "@typescript-eslint/no-unsafe-argument": "error",
     "prettier/prettier": "error",
-    "tsdoc/syntax": "error",
     "no-constant-condition": "off",
     "react-hooks/exhaustive-deps": "off",
     "no-restricted-syntax": [
@@ -38,10 +37,7 @@
       }
     },
     {
-      "files": ["src/migrations/*"],
-      "rules": {
-        "@typescript-eslint/no-explicit-any": "off"
-      }
+      "files": ["src/migrations/*"]
     }
   ]
 }

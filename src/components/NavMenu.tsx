@@ -5,10 +5,10 @@ const navigation = [
   { name: "Home", href: "#home", current: true },
   { name: "Resume", href: "#resume", current: false },
   { name: "Projects", href: "#projects", current: false },
-]
+];
 
 function classNames(...classes: any) {
-  return classes.filter(Boolean).join(" ")
+  return classes.filter(Boolean).join(" ");
 }
 
 function NavMenu() {
@@ -21,7 +21,9 @@ function NavMenu() {
               <div className="flex items-center">
                 <div className="flex-shrink-0">
                   <CodeIcon className="text-blue-500 h-8 w-8 inline" />
-                  <span className="text-blue-500 px-3 text-lg font-medium">Lucy Awrey</span>
+                  <span className="text-blue-500 px-3 text-lg font-medium">
+                    Lucy Awrey
+                  </span>
                 </div>
                 <div className="hidden md:block">
                   <div className="ml-6 flex items-baseline space-x-4">
@@ -33,7 +35,7 @@ function NavMenu() {
                           item.current
                             ? "bg-gray-900 text-white"
                             : "text-gray-300 hover:bg-gray-700 hover:text-white",
-                          "px-3 py-2 rounded-md text-sm font-medium"
+                          "px-3 py-2 rounded-md text-sm font-medium",
                         )}
                         aria-current={item.current ? "page" : undefined}
                       >
@@ -65,8 +67,10 @@ function NavMenu() {
                   as="a"
                   href={item.href}
                   className={classNames(
-                    item.current ? "bg-gray-900 text-white" : "text-gray-300 hover:bg-gray-700 hover:text-white",
-                    "block px-3 py-2 rounded-md text-base font-medium"
+                    item.current
+                      ? "bg-gray-900 text-white"
+                      : "text-gray-300 hover:bg-gray-700 hover:text-white",
+                    "block px-3 py-2 rounded-md text-base font-medium",
                   )}
                   aria-current={item.current ? "page" : undefined}
                 >
@@ -78,7 +82,7 @@ function NavMenu() {
         </>
       )}
     </Disclosure>
-  )
+  );
 }
 
 export default NavMenu;
