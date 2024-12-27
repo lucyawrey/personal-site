@@ -1,12 +1,14 @@
 import { makeAutoObservable } from "mobx";
-import Text from "../content/text.json";
-import run from "../utilities/run";
-import { format, isClient } from "../utilities/helpers";
+import Text from "content/text.json";
+import run from "utilities/run";
+import { format, isClient } from "utilities/helpers";
 
 export class TerminalModel {
   public input: string = "";
 
   public lines: string[] = [Text.terminalStart];
+
+  public program: "root" | "game" = "root";
 
   private inputCache: string = "";
   private cached: boolean = false;

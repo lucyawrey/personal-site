@@ -1,6 +1,7 @@
-import { TerminalModel } from "../models/TerminalModel";
-import Text from "../content/text.json";
-import { jump } from "./helpers";
+import { TerminalModel } from "models/TerminalModel";
+import Text from "content/text.json";
+import GameText from "content/game_text.json";
+import { jump } from "utilities/helpers";
 
 function help(args: string[], terminal: TerminalModel) {
   terminal.print(Text.helpCommand);
@@ -14,5 +15,14 @@ function clear(args: string[], terminal: TerminalModel) {
   terminal.clear();
 }
 
-const Commands: any = { help, go, clear };
+function game(args: string[], terminal: TerminalModel) {
+  terminal.program = "game";
+  terminal.print(GameText.start);
+}
+
+function cute(args: string[], terminal: TerminalModel) {
+  terminal.print(Text.cute);
+}
+
+const Commands: any = { help, go, clear, game, cute };
 export default Commands;

@@ -1,5 +1,5 @@
 import { observer } from "mobx-react-lite";
-import { TerminalModel } from "../models/TerminalModel";
+import { TerminalModel } from "models/TerminalModel";
 import { ChangeEvent, useRef } from "react";
 
 interface TerminalProps {
@@ -23,7 +23,7 @@ const Terminal = observer(({ model }: TerminalProps) => {
     items.push(
       <span className={"block whitespace-pre-wrap" + mod} key={i}>
         {line}
-      </span>,
+      </span>
     );
     i++;
   }
@@ -58,18 +58,25 @@ const Terminal = observer(({ model }: TerminalProps) => {
   }
 
   function keyDown(event: React.KeyboardEvent<HTMLInputElement>) {
-    switch (event.key) {
-      case "Enter":
+    switch (event.key.toLowerCase()) {
+      case "enter":
         model.submit();
         scrollBottom();
         break;
-      case "ArrowUp":
+      case "arrowup":
         event.preventDefault();
         model.historyBack();
         break;
-      case "ArrowDown":
+      case "arrowdown":
         event.preventDefault();
         model.historyForward();
+        break;
+      case "c":
+        if (event.ctrlKey) {
+          event.preventDefault();
+          model.program = "root";
+          model.print("\nEnding Game.");
+        }
         break;
       default:
         return;

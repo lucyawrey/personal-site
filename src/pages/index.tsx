@@ -1,9 +1,9 @@
-import Footer from "../components/Footer";
-import NavMenu from "../components/NavMenu";
-import Terminal from "../components/Terminal";
-import { TerminalModel } from "../models/TerminalModel";
-import Text from "../content/text.json";
-import HeaderBar from "../components/HeaderBar";
+import Footer from "components/Footer";
+import NavMenu from "components/NavMenu";
+import Terminal from "components/Terminal";
+import { TerminalModel } from "models/TerminalModel";
+import Text from "content/text.json";
+import HeaderBar from "components/HeaderBar";
 
 const terminal = new TerminalModel();
 
@@ -19,10 +19,7 @@ function Home() {
           </div>
           <section className="bg-white shadow mt-8 mb-24 pb-4 container md:w-3/4 mx-auto text-xl text-center">
             <header className="py-6 border-dashed border-b-2 border-gray-500 mb-4">
-              <h1
-                id="construction"
-                className="text-3xl font-bold text-gray-900 text-center"
-              >
+              <h1 id="construction" className="text-3xl font-bold text-gray-900 text-center">
                 👷‍♀️ Under Construction 👷‍♀️
               </h1>
             </header>
