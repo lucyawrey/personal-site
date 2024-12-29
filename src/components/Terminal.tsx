@@ -1,3 +1,5 @@
+"use client";
+
 import { observer } from "mobx-react-lite";
 import { TerminalModel } from "models/TerminalModel";
 import { ChangeEvent, useRef } from "react";
