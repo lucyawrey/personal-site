@@ -17,6 +17,7 @@
     "prettier/prettier": "error",
     "no-constant-condition": "off",
     "react-hooks/exhaustive-deps": "off",
+    "@typescript-eslint/no-explicit-any": "off",
     "no-restricted-syntax": [
       "error",
       ":not(BinaryExpression:matches([operator='!=='], [operator='==='])) > Literal[value=null]",
