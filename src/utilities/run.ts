@@ -1,5 +1,6 @@
 import { TerminalModel } from "models/TerminalModel";
 import Commands from "utilities/commands";
+import GameCommands from "utilities/game-commands";
 import Text from "content/text.json";
 
 export default function run(line: string, terminal: TerminalModel) {
@@ -10,7 +11,13 @@ export default function run(line: string, terminal: TerminalModel) {
     try {
       Commands[cmd](args, terminal);
     } catch {
-      terminal.error(Text.errorNotFound, cmd);
+      terminal.print(Text.errorNotFound, cmd);
+    }
+  } else if (terminal.program === "game") {
+    try {
+      GameCommands[cmd](args, terminal);
+    } catch {
+      terminal.print(Text.game.gameNoAction, cmd);
     }
   }
 }
