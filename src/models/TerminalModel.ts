@@ -2,6 +2,7 @@ import { makeAutoObservable } from "mobx";
 import Text from "content/text.json";
 import run from "utilities/run";
 import { format, isClient } from "utilities/helpers";
+import { GameModel } from "./GameModel";
 
 type Program = "root" | "game";
 
@@ -17,6 +18,8 @@ export class TerminalModel {
 
   private history: string[] = [];
   private historyIter: number = 0;
+
+  private game = new GameModel();
 
   constructor() {
     if (isClient()) {
@@ -36,6 +39,8 @@ export class TerminalModel {
       this.historyPush(cleaned);
       this.print("> " + cleaned);
       run(cleaned, this);
+    } else if (this.program === "game") {
+      this.game.loop(this);
     } else {
       this.print(">");
     }
@@ -85,6 +90,16 @@ export class TerminalModel {
 
   public clear() {
     this.lines = [];
+  }
+
+  public startGame() {
+    this.program = "game";
+    this.game.loop(this);
+  }
+
+  public quitGame() {
+    this.program = "root";
+    this.print(Text.game.end);
   }
 
   private historyPush(newline: string) {

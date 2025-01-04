@@ -16,8 +16,3 @@ export function jump(header: string) {
   const url = location.href;
   location.href = "#" + header;
 }
-
-export function quitGame(terminal: TerminalModel) {
-  terminal.program = "root";
-  terminal.print(Text.game.end);
-}

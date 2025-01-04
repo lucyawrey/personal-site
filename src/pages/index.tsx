@@ -16,7 +16,7 @@ function Home() {
         </Head>
         <main>
           <div className="max-w-3xl mx-auto py-6 sm:px-6 lg:px-8">
-            <Terminal model={terminal} />
+            <Terminal terminal={terminal} />
             <p className="m-1 text-gray-500">{Text.terminalHelp}</p>
           </div>
           <section className="bg-white shadow mt-8 mb-24 pb-4 container md:w-3/4 mx-auto text-xl text-center">

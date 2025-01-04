@@ -4,7 +4,7 @@ import GameCommands from "utilities/game-commands";
 import Text from "content/text.json";
 
 export default function run(line: string, terminal: TerminalModel) {
-  const args = line.toLowerCase().split(" ");
+  const args = line.toLowerCase().split(/\s+/);
   const cmd = args[0];
   args.splice(0, 1);
   if (terminal.program === "root") {
@@ -14,6 +14,7 @@ export default function run(line: string, terminal: TerminalModel) {
       terminal.print(Text.errorNotFound, cmd);
     }
   } else if (terminal.program === "game") {
+    console.log(cmd);
     try {
       GameCommands[cmd](args, terminal);
     } catch {

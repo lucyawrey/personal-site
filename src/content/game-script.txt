@@ -1,4 +1,13 @@
+[text-blue-500]Welcome to Lucy's Text Adventure!
 
-Welcome to the my Text Adventure Game!
+[text-green-500]The game is currently under construction, so it does not have a lot of features yet. Remember that you can use the commands "quit", "hint", and "help" at any time.
 
-The game is currently under construction, so right now you won't be able to take game actions and can only use the commands "quit", "clear", and "help".
+Press Enter to continue...
+!wait
+
+This whole text adventure is generated from a .txt file that is capable of passing along commands and CSS classes to the terminal.
+
+That's all for now!
+
+Press Enter to exit...
+!wait
