@@ -1,30 +1,28 @@
 import { observer } from "mobx-react-lite";
 import { TerminalModel } from "models/TerminalModel";
 import { ChangeEvent, useRef } from "react";
-import { quitGame } from "utilities/helpers";
 
 interface TerminalProps {
-  model: TerminalModel;
+  terminal: TerminalModel;
 }
 
-const Terminal = observer(({ model }: TerminalProps) => {
+const Terminal = observer(({ terminal }: TerminalProps) => {
   const terminalRef = useRef<any>(null);
   const inputRef = useRef<any>(null);
 
   const items: JSX.Element[] = [];
 
   let i = 1;
-  for (let line of model.lines) {
+  for (let line of terminal.lines) {
     let addClass = "";
-    const match = line.match(/^\[([_a-zA-Z]+[_a-zA-Z0-9-]*?)\]/);
+    const match = line.match(/^\[([_a-zA-Z]+[_a-zA-Z0-9-\s]*?)\]/);
     if (match) {
       line = line.substring(match[0].length);
       addClass = " " + match[1];
     }
-
     items.push(
       <span className={"block whitespace-pre-wrap" + addClass} key={i}>
-        {line}
+        {line || "\n"}
       </span>
     );
     i++;
@@ -46,37 +44,37 @@ const Terminal = observer(({ model }: TerminalProps) => {
   }
 
   function cursorEnd() {
-    if (model.input && inputRef.current) {
+    if (terminal.input && inputRef.current) {
       setTimeout(() => {
-        inputRef.current.selectionStart = model.input.length;
-        inputRef.current.selectionEnd = model.input.length;
+        inputRef.current.selectionStart = terminal.input.length;
+        inputRef.current.selectionEnd = terminal.input.length;
       }, 10);
     }
   }
 
   function change(event: ChangeEvent<HTMLInputElement>) {
-    model.setInput(event.target.value);
-    model.resetIter();
+    terminal.setInput(event.target.value);
+    terminal.resetIter();
   }
 
   function keyDown(event: React.KeyboardEvent<HTMLInputElement>) {
     switch (event.key.toLowerCase()) {
       case "enter":
-        model.submit();
+        terminal.submit();
         scrollBottom();
         break;
       case "arrowup":
         event.preventDefault();
-        model.historyBack();
+        terminal.historyBack();
         break;
       case "arrowdown":
         event.preventDefault();
-        model.historyForward();
+        terminal.historyForward();
         break;
       case "c":
         if (event.ctrlKey) {
           event.preventDefault();
-          quitGame(model);
+          terminal.quitGame();
         }
         break;
       default:
@@ -99,7 +97,7 @@ const Terminal = observer(({ model }: TerminalProps) => {
           className="bg-black w-[90%] border-none m-0 p-0 outline-none"
           ref={inputRef}
           type="text"
-          value={model.input}
+          value={terminal.input}
           onChange={change}
           onKeyDown={keyDown}
           autoCorrect="off"

@@ -1,6 +1,5 @@
 import { TerminalModel } from "models/TerminalModel";
 import Text from "content/text.json";
-import GameScript from "content/game-script.txt";
 import { isClient, jump } from "utilities/helpers";
 
 function help(args: string[], terminal: TerminalModel) {
@@ -31,8 +30,7 @@ function clear(args: string[], terminal: TerminalModel) {
 }
 
 function game(args: string[], terminal: TerminalModel) {
-  terminal.program = "game";
-  terminal.print(GameScript);
+  terminal.startGame();
 }
 
 function cute(args: string[], terminal: TerminalModel) {
