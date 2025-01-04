@@ -1,21 +1,19 @@
-import Footer from "components/Footer";
-import NavMenu from "components/NavMenu";
 import Terminal from "components/Terminal";
 import { TerminalModel } from "models/TerminalModel";
 import Text from "content/text.json";
 import HeaderBar from "components/HeaderBar";
 import Head from "next/head";
+import Layout from "components/Layout";
 
 const terminal = new TerminalModel();
 
 function Home() {
   return (
-    <>
-      <Head>
-        <title>Lucy Awrey's Personal Website</title>
-      </Head>
+    <Layout>
       <div id="home" className="min-h-full">
-        <NavMenu />
+        <Head>
+          <title>Lucy Awrey's Personal Website</title>
+        </Head>
         <main>
           <div className="max-w-3xl mx-auto py-6 sm:px-6 lg:px-8">
             <Terminal model={terminal} />
@@ -41,10 +39,7 @@ function Home() {
           </section>
         </main>
       </div>
-
-      <div className="py-16"></div>
-      <Footer />
-    </>
+    </Layout>
   );
 }
 
