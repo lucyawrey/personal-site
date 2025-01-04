@@ -1,6 +1,7 @@
 import { observer } from "mobx-react-lite";
 import { TerminalModel } from "models/TerminalModel";
 import { ChangeEvent, useRef } from "react";
+import { quitGame } from "utilities/helpers";
 
 interface TerminalProps {
   model: TerminalModel;
@@ -14,14 +15,15 @@ const Terminal = observer(({ model }: TerminalProps) => {
 
   let i = 1;
   for (let line of model.lines) {
-    let mod = "";
-    if (line.startsWith("[red]")) {
-      line = line.replace("[red]", "");
-      mod = " text-red-500";
+    let addClass = "";
+    const match = line.match(/^\[([_a-zA-Z]+[_a-zA-Z0-9-]*?)\]/);
+    if (match) {
+      line = line.substring(match[0].length);
+      addClass = " " + match[1];
     }
 
     items.push(
-      <span className={"block whitespace-pre-wrap" + mod} key={i}>
+      <span className={"block whitespace-pre-wrap" + addClass} key={i}>
         {line}
       </span>
     );
@@ -74,8 +76,7 @@ const Terminal = observer(({ model }: TerminalProps) => {
       case "c":
         if (event.ctrlKey) {
           event.preventDefault();
-          model.program = "root";
-          model.print("\nEnding Game.");
+          quitGame(model);
         }
         break;
       default:

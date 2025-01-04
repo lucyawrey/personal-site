@@ -1,6 +1,6 @@
 import { TerminalModel } from "models/TerminalModel";
 import Text from "content/text.json";
-import GameText from "content/game_text.json";
+import GameScript from "content/game-script.txt";
 import { jump } from "utilities/helpers";
 
 function help(args: string[], terminal: TerminalModel) {
@@ -8,7 +8,11 @@ function help(args: string[], terminal: TerminalModel) {
 }
 
 function go(args: string[], terminal: TerminalModel) {
-  jump(args[0].toLowerCase());
+  if (args[0]) {
+    jump(args[0].toLowerCase());
+  } else {
+    terminal.print(Text.errorGoArgument);
+  }
 }
 
 function clear(args: string[], terminal: TerminalModel) {
@@ -17,7 +21,7 @@ function clear(args: string[], terminal: TerminalModel) {
 
 function game(args: string[], terminal: TerminalModel) {
   terminal.program = "game";
-  terminal.print(GameText.start);
+  terminal.print(GameScript);
 }
 
 function cute(args: string[], terminal: TerminalModel) {

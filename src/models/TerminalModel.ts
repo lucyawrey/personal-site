@@ -81,10 +81,6 @@ export class TerminalModel {
     this.lines.push(newline);
   }
 
-  public error(message: string, ...args: any[]) {
-    this.print("[red]" + message, args);
-  }
-
   public clear() {
     this.lines = [];
   }
