@@ -3,12 +3,14 @@ import Text from "content/text.json";
 import run from "utilities/run";
 import { format, isClient } from "utilities/helpers";
 
+type Program = "root" | "game";
+
 export class TerminalModel {
   public input: string = "";
 
   public lines: string[] = [Text.terminalStart];
 
-  public program: "root" | "game" = "root";
+  public program: Program = "root";
 
   private inputCache: string = "";
   private cached: boolean = false;
