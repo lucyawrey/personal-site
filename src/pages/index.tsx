@@ -4,12 +4,16 @@ import Terminal from "components/Terminal";
 import { TerminalModel } from "models/TerminalModel";
 import Text from "content/text.json";
 import HeaderBar from "components/HeaderBar";
+import Head from "next/head";
 
 const terminal = new TerminalModel();
 
 function Home() {
   return (
     <>
+      <Head>
+        <title>Lucy Awrey's Personal Website</title>
+      </Head>
       <div id="home" className="min-h-full">
         <NavMenu />
         <main>
