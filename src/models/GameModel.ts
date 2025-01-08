@@ -25,9 +25,9 @@ export class GameModel {
       const line = this.script[this.scriptPosition];
 
       const trim = line.trim();
-      if (trim.startsWith("!")) {
-        const args = trim.toLowerCase().split(/\s+/);
-        const cmd = args[0].substring(1);
+      if (trim.startsWith("$")) {
+        const args = trim.substring(1).trimStart().toLowerCase().split(/\s+/);
+        const cmd = args[0];
         args.splice(0, 1);
         if (cmd === "jump") {
           this.scriptPosition = parseInt(args[0]) - 1;

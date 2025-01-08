@@ -2,7 +2,7 @@ import { makeAutoObservable } from "mobx";
 import Text from "content/text.json";
 import run from "utilities/run";
 import { format, isClient } from "utilities/helpers";
-import { GameModel } from "./GameModel";
+import { GameModel } from "models/GameModel";
 
 type Program = "root" | "game";
 
