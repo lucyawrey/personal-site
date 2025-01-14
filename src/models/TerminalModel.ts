@@ -102,6 +102,10 @@ export class TerminalModel {
     this.print(Text.game.end);
   }
 
+  public getGame() {
+    return this.game;
+  }
+
   private historyPush(newline: string) {
     const loc = this.history.indexOf(newline);
     if (loc != -1) {

@@ -3,6 +3,8 @@ import GameScript from "content/game-script.txt";
 import { isClient } from "utilities/helpers";
 import { TerminalModel } from "./TerminalModel";
 
+const scriptRegex = /(?<cmd>[^"^\s]+)\s*|"(?<str>[^"]+)"\s*/g;
+
 export class GameModel {
   public readonly script: string[] = (GameScript as string).split("\n");
 
@@ -16,21 +18,26 @@ export class GameModel {
   }
 
   public loop(terminal: TerminalModel) {
+    console.log("\n\nSTART!");
     while (true) {
       if (this.scriptPosition >= this.script.length) {
         this.end(terminal);
         break;
       }
-
-      const line = this.script[this.scriptPosition];
-
-      const trim = line.trim();
-      if (trim.startsWith("$")) {
-        const args = trim.substring(1).trimStart().toLowerCase().split(/\s+/);
-        const cmd = args[0];
-        args.splice(0, 1);
-        if (cmd === "jump") {
-          this.scriptPosition = parseInt(args[0]) - 1;
+      const line = this.script[this.scriptPosition].trim();
+      if (!line) {
+        console.log(`NO LINE: ${this.scriptPosition}`);
+        break;
+      }
+      const matches = scriptRegex.exec(line);
+      if (matches) {
+        const cmd = matches[0];
+        matches.splice(0, 1);
+        console.log(`CMD: ${cmd}\n`, matches);
+        if (!cmd) {
+          terminal.print(matches[1]);
+        } else if (cmd === "jump") {
+          this.scriptPosition = parseInt(matches[0]) - 1;
         } else if (cmd === "wait") {
           this.scriptPosition++;
           break;
@@ -38,10 +45,9 @@ export class GameModel {
           this.end(terminal);
           break;
         } else {
-          terminal.print(`[text-red-500]Error, invalid script command: ${cmd}.`);
+          terminal.print(matches[1]);
+          //terminal.print(`[text-red-500]Error, invalid script command: ${cmd}.`);
         }
-      } else {
-        terminal.print(line);
       }
 
       this.scriptPosition++;
@@ -49,8 +55,15 @@ export class GameModel {
     }
   }
 
-  public end(terminal: TerminalModel) {
+  public restart(terminal: TerminalModel, resume: boolean = false) {
     this.scriptPosition = 0;
+    if (resume) {
+      this.loop(terminal);
+    }
+  }
+
+  public end(terminal: TerminalModel) {
+    this.restart(terminal);
     this.gameSave();
     terminal.quitGame();
   }
