@@ -5,6 +5,7 @@
   "errorNotFound": "[text-red-500]Command \"{}\" not found. Try typing \"help\" for a list of available commands.",
   "errorGoArgument": "[text-red-500]Please give a section to jump to (home|resume|projects).",
   "errorLinkArgument": "[text-red-500]Please give an external site to link to (github|linkedin).",
+  "notImplemented": "[text-green-500]NOT IMPLEMENTED.",
   "terminalStart": "Lucy Awrey's Personal Site\n\n",
   "terminalHelp": "Try typing \"help\" for a list of available commands.",
   "helpCommand": "[text-blue-500]  - link <github|linkedin>: open one of my external links\n  - go <home|resume|projects>: move to a section on this page\n  - game: start a text adventure game in the terminal\n  - help: show a list of available commands\n  - clear: clear all terminal text\n",
@@ -17,6 +18,6 @@
   "game": {
     "end": "Ending Game...\n\n",
     "gameNoAction": "[text-green-500]That is not a valid action, try something else.",
-    "helpCommand": "[text-green-500]  - quit: quit game and return to the normal terminal\n  - hint: give a hint for the current action to take\n  - help: show a list of available game commands\n  - clear: clear all terminal text\n"
+    "helpCommand": "[text-green-500]  - quit: quit game and return to the normal terminal\n  - restart: restart the game from the beginning\n  - hint: give a hint for the current action to take\n  - help: show a list of available game commands\n  - clear: clear all terminal text\n"
   }
 }
