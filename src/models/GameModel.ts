@@ -1,9 +1,7 @@
 import Text from "content/text.json";
 import GameScript from "content/game-script.txt";
-import { isClient } from "utilities/helpers";
+import { isClient, trimQuotes } from "utilities/helpers";
 import { TerminalModel } from "./TerminalModel";
-
-const scriptRegex = /(?<cmd>[^"^\s]+)\s*|"(?<str>[^"]+)"\s*/g;
 
 export class GameModel {
   public readonly script: string[] = (GameScript as string).split("\n");
@@ -25,28 +23,26 @@ export class GameModel {
         break;
       }
       const line = this.script[this.scriptPosition].trim();
-      if (!line) {
-        console.log(`NO LINE: ${this.scriptPosition}`);
-        break;
-      }
-      const matches = scriptRegex.exec(line);
-      if (matches) {
-        const cmd = matches[0];
-        matches.splice(0, 1);
-        console.log(`CMD: ${cmd}\n`, matches);
-        if (!cmd) {
-          terminal.print(matches[1]);
-        } else if (cmd === "jump") {
-          this.scriptPosition = parseInt(matches[0]) - 1;
-        } else if (cmd === "wait") {
+      const match = line.match(/(?:[^\s"]+|"[^"]*")+/g);
+
+      console.log(match);
+      if (match) {
+        if (match[0] === "jump") {
+          this.scriptPosition = parseInt(match[0]) - 1;
+        } else if (match[0] === "wait") {
           this.scriptPosition++;
           break;
-        } else if (cmd === "end") {
+        } else if (match[0] === "end") {
           this.end(terminal);
           break;
+        } else if (match[0].startsWith("")) {
+          let text = trimQuotes(match[0]);
+          if (match[1]) {
+            text = "[" + trimQuotes(match[1]) + "]" + text;
+          }
+          terminal.print(text);
         } else {
-          terminal.print(matches[1]);
-          //terminal.print(`[text-red-500]Error, invalid script command: ${cmd}.`);
+          terminal.print(`[text-red-500]Error, invalid script command: ${match[0]}.`);
         }
       }
 
