@@ -27,16 +27,33 @@ export class GameModel {
 
       console.log(match);
       if (match) {
-        if (match[0] === "jump") {
-          this.scriptPosition = parseInt(match[0]) - 1;
-        } else if (match[0] === "wait") {
+        let cmd = match[0];
+        if (cmd === "jump") {
+          this.scriptPosition = parseInt(cmd) - 1;
+        } else if (cmd === "wait") {
           this.scriptPosition++;
           break;
-        } else if (match[0] === "end") {
+        } else if (cmd === "end") {
           this.end(terminal);
           break;
-        } else if (match[0].startsWith("")) {
-          let text = trimQuotes(match[0]);
+        } else if (cmd === "choice") {
+          for (let i = 0; ; i += 2) {
+            if (match[1 + i] && match[2 + i]) {
+              let option = trimQuotes(match[1 + i]);
+              terminal.print(`  ${(i + 2) / 2}) ${option}`);
+              //todo jump to logic
+            } else {
+              break;
+            }
+          }
+        } else if (cmd === "print") {
+          let text = trimQuotes(match[1]);
+          if (match[2]) {
+            text = "[" + trimQuotes(match[2]) + "]" + text;
+          }
+          terminal.print(text);
+        } else if (cmd.startsWith('"')) {
+          let text = trimQuotes(cmd);
           if (match[1]) {
             text = "[" + trimQuotes(match[1]) + "]" + text;
           }
