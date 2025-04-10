@@ -8,6 +8,7 @@ export class GameModel {
 
   public scriptPosition: number = 0;
   public playerName: string = "";
+  public data: any = {};
 
   constructor() {
     if (isClient()) {
@@ -15,21 +16,34 @@ export class GameModel {
     }
   }
 
+  /// TODO much better script processing logic
   public loop(terminal: TerminalModel) {
-    console.log("\n\nSTART!");
     while (true) {
       if (this.scriptPosition >= this.script.length) {
         this.end(terminal);
         break;
       }
-      const line = this.script[this.scriptPosition].trim();
+      let line = this.script[this.scriptPosition].trim();
+      // Replace variables
+      line = line.replace(/\[\s*([a-zA-Z0-9_+]+)\s*\]/g, (match) => {
+        match = match.replace(/[\[\]\s]*/g, "");
+        let value = this.data[match];
+        if (value) {
+          return value.toString();
+        } else {
+          return `[Invalid Variable: ${match}]`;
+        }
+      });
+      // Match tokens
       const match = line.match(/(?:[^\s"]+|"[^"]*")+/g);
-
       console.log(match);
       if (match) {
         let cmd = match[0];
         if (cmd === "jump") {
-          this.scriptPosition = parseInt(cmd) - 1;
+          this.scriptPosition = parseInt(match[1]) - 1;
+        }
+        if (cmd === "set") {
+          this.data[match[1]] = match[2];
         } else if (cmd === "wait") {
           this.scriptPosition++;
           break;
@@ -47,24 +61,15 @@ export class GameModel {
             }
           }
         } else if (cmd === "print") {
-          let text = trimQuotes(match[1]);
-          if (match[2]) {
-            text = "[" + trimQuotes(match[2]) + "]" + text;
-          }
-          terminal.print(text);
+          this.print(terminal, match[1], match[2]);
         } else if (cmd.startsWith('"')) {
-          let text = trimQuotes(cmd);
-          if (match[1]) {
-            text = "[" + trimQuotes(match[1]) + "]" + text;
-          }
-          terminal.print(text);
+          this.print(terminal, cmd, match[1]);
         } else {
           terminal.print(`[text-red-500]Error, invalid script command: ${match[0]}.`);
         }
       }
 
       this.scriptPosition++;
-      this.gameSave();
     }
   }
 
@@ -81,8 +86,18 @@ export class GameModel {
     terminal.quitGame();
   }
 
+  private print(terminal: TerminalModel, text: string, classNames: string) {
+    text = trimQuotes(text);
+    if (classNames) {
+      text = "[" + trimQuotes(classNames) + "]" + text;
+    }
+    terminal.print(text);
+    this.gameSave();
+  }
+
   private gameSave() {
     const json = JSON.stringify({
+      data: this.data,
       scriptPosition: this.scriptPosition,
       playerName: this.playerName,
     });
@@ -93,6 +108,7 @@ export class GameModel {
     const json = localStorage.getItem(Text.gameDataStorageKey);
     if (json) {
       const data = JSON.parse(json);
+      this.data = data.data;
       this.scriptPosition = data.scriptPosition;
       this.playerName = data.playerName;
     }
