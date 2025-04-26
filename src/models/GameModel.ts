@@ -29,21 +29,25 @@ export class GameModel {
         match = match.replace(/[\[\]\s]*/g, "");
         let value = this.data[match];
         if (value) {
-          return value.toString();
+          let string = value.toString();
+          if (/\s/.test(string)) {
+            return "`" + string + "`";
+          }
+          return string;
         } else {
           return `[Invalid Variable: ${match}]`;
         }
       });
+      console.log(line);
       // Match tokens
-      const match = line.match(/(?:[^\s"]+|"[^"]*")+/g);
-      console.log(match);
+      const match = line.match(/(?:[^\s"'`]+|[`'"][^`'"]*["'`])+/g);
       if (match) {
         let cmd = match[0];
         if (cmd === "jump") {
           this.scriptPosition = parseInt(match[1]) - 1;
         }
         if (cmd === "set") {
-          this.data[match[1]] = match[2];
+          this.data[match[1]] = trimQuotes(match[2]);
         } else if (cmd === "wait") {
           this.scriptPosition++;
           break;

@@ -20,7 +20,7 @@ export function jump(header: string) {
 export function trimQuotes(text: string): string {
   var start = 0,
     end = text.length;
-  while (start < end && text[start] === '"') ++start;
-  while (end > start && text[end - 1] === '"') --end;
+  while (start < end && /["'`]/.test(text[start])) ++start;
+  while (end > start && /["'`]/.test(text[end - 1])) --end;
   return start > 0 || end < text.length ? text.substring(start, end) : text;
 }
