@@ -3,8 +3,9 @@ import { CodeIcon, MenuIcon, XIcon } from "@heroicons/react/outline";
 
 const navigation = [
   { name: "Home", href: "#home", current: true },
-  { name: "Resume", href: "#resume", current: false },
+  { name: "About Me", href: "#about-me", current: false },
   { name: "Projects", href: "#projects", current: false },
+  { name: "Resume", href: "#resume", current: false },
 ];
 
 function classNames(...classes: any) {
