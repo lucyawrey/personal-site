@@ -13,6 +13,7 @@ wait
 "The mysterious number is [mystery_number]."
 ""
 "This whole text adventure is generated from a .txt file that is capable of passing along commands and CSS classes to the terminal."
+"Unfortunately, parsing is somewhat glitchy at the moment. I plan to redo this game module to use Ink script syntax."
 ""
 "That|s all for now!"
 ""
