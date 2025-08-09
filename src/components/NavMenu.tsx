@@ -25,13 +25,13 @@ function NavMenu() {
         <>
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex items-center justify-between h-16">
-              <div className="flex items-center">
+              <div className="flex items-center w-full">
                 <div className="flex-shrink-0">
                   <CodeIcon className="text-blue-500 h-8 w-8 inline" />
                   <span className="text-blue-500 px-3 text-lg font-medium">Lucy Awrey</span>
                 </div>
-                <div className="hidden md:block">
-                  <div className="ml-6 flex items-baseline space-x-4">
+                <div className="hidden md:block w-full">
+                  <div className="ml-6 flex items-baseline space-x-4 lg:mr-6">
                     {navigation.map((item) => (
                       <a
                         key={item.name}
@@ -40,10 +40,23 @@ function NavMenu() {
                           item.current
                             ? "bg-gray-900 text-white"
                             : "text-gray-300 hover:bg-gray-700 hover:text-white",
-                          "px-3 py-2 rounded-md text-sm font-medium"
+                          "px-3 md:px-2 py-2 rounded-md text-sm font-medium"
                         )}
                         aria-current={item.current ? "page" : undefined}
                       >
+                        {item.name}
+                      </a>
+                    ))}
+                    {social.map((item, i) => (
+                      <a
+                        key={item.name}
+                        href={item.href}
+                        className={classNames(
+                          "text-gray-300 hover:bg-gray-700 hover:text-white px-3 md:px-2 py-2 rounded-md text-sm font-medium",
+                          i === 0 ? "!ml-auto" : ""
+                        )}
+                      >
+                        <img src={item.icon} className="w-7 h-7 inline-block mr-2 mb-1" />
                         {item.name}
                       </a>
                     ))}
@@ -79,6 +92,20 @@ function NavMenu() {
                   )}
                   aria-current={item.current ? "page" : undefined}
                 >
+                  {item.name}
+                </Disclosure.Button>
+              ))}
+              {social.map((item, i) => (
+                <Disclosure.Button
+                  key={item.name}
+                  as="a"
+                  href={item.href}
+                  className={classNames(
+                    "text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium",
+                    i === 0 ? "!mt-4" : ""
+                  )}
+                >
+                  <img src={item.icon} className="w-7 h-7 inline-block mr-2 mb-1" />
                   {item.name}
                 </Disclosure.Button>
               ))}

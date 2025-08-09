@@ -6,7 +6,7 @@ function Document() {
       <Head>
         <link rel="icon" type="image/x-icon" href="favicon.ico"></link>
       </Head>
-      <body className="h-full bg-gray-100">
+      <body id="home" className="h-full bg-gray-100">
         <Main />
         <NextScript />
       </body>
