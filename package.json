@@ -11,6 +11,7 @@
   "dependencies": {
     "@headlessui/react": "^1.6.1",
     "@heroicons/react": "^1.0.6",
+    "inkjs": "^2.3.2",
     "mobx": "^6.13.7",
     "mobx-react-lite": "^4.1.0",
     "next": "14.2.5",

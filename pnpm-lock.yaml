@@ -14,6 +14,9 @@ importers:
       '@heroicons/react':
         specifier: ^1.0.6
         version: 1.0.6(react@18.3.1)
+      inkjs:
+        specifier: ^2.3.2
+        version: 2.3.2
       mobx:
         specifier: ^6.13.7
         version: 6.13.7
@@ -530,6 +533,10 @@ packages:
   hasown@2.0.2:
     resolution: {integrity: sha512-0hJU9SCPvmMzIBdZFqNPXWa6dqh7WdH0cII9y+CyS8rG3nL48Bclra9HmKhVVUHyPWNH5Y7xDwAB7bfgSjkUMQ==}
     engines: {node: '>= 0.4'}
+
+  inkjs@2.3.2:
+    resolution: {integrity: sha512-iZjrY0lLeRiC+HtDzCfV9IEAP9ExCmBZUrxKkyLy1qIbbGbR1uTXNZ8LDIg8oVkMXZ9TeKKyEFQpQ/m5nQds8w==}
+    hasBin: true
 
   is-binary-path@2.1.0:
     resolution: {integrity: sha512-ZMERYes6pDydyuGidse7OsHxtbI7WVeUEozgR/g7rd0xUimYNlvZRE/K2MgZTjWy725IfelLeVcEM97mmtRGXw==}
@@ -1484,6 +1491,8 @@ snapshots:
   hasown@2.0.2:
     dependencies:
       function-bind: 1.1.2
+
+  inkjs@2.3.2: {}
 
   is-binary-path@2.1.0:
     dependencies:
