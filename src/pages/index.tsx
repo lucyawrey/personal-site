@@ -11,7 +11,7 @@ const terminal = new TerminalModel();
 function Home() {
   return (
     <Layout>
-      <div id="home" className="min-h-full">
+      <div className="min-h-full">
         <Head>
           <title>Lucy Awrey's Personal Website</title>
         </Head>
