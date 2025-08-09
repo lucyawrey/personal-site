@@ -1,14 +1,23 @@
 {
   "sessionStorageKey": "lucyawrey:terminalhistory",
   "gameDataStorageKey": "lucyawrey:gamedata",
-  "links": { "github": "https://github.com/lucyawrey", "linkedin": "https://github.com/lucyawrey" },
+  "files": {
+    "resume": "Lucy_Awrey_Resume_2025.pdf",
+    "githubIcon": "github_icon.svg",
+    "linkedinIcon": "linkedin_icon.svg"
+  },
+  "links": {
+    "github": "https://github.com/lucyawrey",
+    "linkedin": "https://www.linkedin.com/in/lucyawrey"
+  },
   "errorNotFound": "[text-red-500]Command \"{}\" not found. Try typing \"help\" for a list of available commands.",
-  "errorGoArgument": "[text-red-500]Please give a section to jump to (home|resume|projects).",
-  "errorLinkArgument": "[text-red-500]Please give an external site to link to (github|linkedin).",
+  "errorGoArgument": "[text-red-500]Please give a section to jump to <home|resume|projects>.",
+  "errorLinkArgument": "[text-red-500]Please give an external site to link to <github|linkedin>.",
+  "errorGetArgument": "[text-red-500]Please give the file to download <resume>.",
   "notImplemented": "[text-green-500]NOT IMPLEMENTED.",
   "terminalStart": "Lucy Awrey's Personal Website\n\n",
   "terminalHelp": "Try typing \"help\" for a list of available commands.",
-  "helpCommand": "[text-blue-500]  - link <github|linkedin>: open a given external link\n  - go <home|projects|resume|about-me>: navigate to a given section\n  - download <resume>: download a given file\n  - help: show a list of available commands\n  - clear: clear all terminal text\n  - game: start the text adventure game 'Awakening Quest'\n",
+  "helpCommand": "[text-blue-500]  - link <github|linkedin>: open a given external link\n  - go <home|projects|resume|about-me>: navigate to a given section\n  - get <resume>: download or open a given file, depending on browser\n  - help: show a list of available commands\n  - clear: clear all terminal text\n  - game: start the text adventure game 'Awakening Quest'\n",
   "copy": "© 2025 Lucy Awrey",
   "lorem1": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum egestas vestibulum est, a vehicula magna porttitor pharetra. Donec quis sodales mi. Vivamus fringilla volutpat leo, at egestas lacus bibendum vel. Maecenas luctus venenatis augue, eget vestibulum tellus tempus in. Maecenas congue posuere aliquam. Pellentesque nibh massa, sollicitudin nec magna eget, porttitor feugiat sem. Nullam mattis ligula vitae pellentesque sodales. Fusce dictum lorem quis arcu suscipit iaculis. Nunc aliquet in lacus sit amet pretium. Suspendisse tempus lectus in imperdiet ullamcorper. Nam rhoncus sed massa sed faucibus. Nulla eu consequat libero. Vivamus vulputate ligula sed ultricies sodales. Ut bibendum eros et purus accumsan aliquet. Donec vehicula ligula ac turpis ultrices blandit.",
   "lorem2": "Suspendisse non libero eu eros commodo efficitur. Quisque rutrum justo sed sem condimentum, eget fringilla justo sodales. Aliquam mattis felis nec nisi dictum, ut auctor magna ultrices. Duis nibh lorem, dignissim vitae iaculis ac, vestibulum sed ipsum. Donec in metus id tellus gravida placerat et sit amet dui. Donec eu erat nunc. Vestibulum eros libero, lacinia ac quam non, consequat dictum ex. Morbi sed leo justo. Phasellus viverra aliquet enim ut tempus. Fusce metus arcu, aliquam vel consectetur ut, hendrerit ac eros. Duis mattis sagittis ante non dignissim. Donec tristique vel mi vel consequat. Praesent dapibus nisl sed nisi ullamcorper, in faucibus libero posuere. Curabitur ac elit a orci tincidunt eleifend.",

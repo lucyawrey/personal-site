@@ -17,6 +17,18 @@ function link(args: string[], terminal: TerminalModel) {
   }
 }
 
+function get(args: string[], terminal: TerminalModel) {
+  if (args[0] && args[0] === "resume") {
+    if (isClient()) {
+      let a = document.createElement("a");
+      a.href = Text.files.resume;
+      a.click();
+    }
+  } else {
+    terminal.print(Text.errorGetArgument);
+  }
+}
+
 function go(args: string[], terminal: TerminalModel) {
   if (args[0]) {
     jump(args[0].toLowerCase());
@@ -37,5 +49,5 @@ function cute(args: string[], terminal: TerminalModel) {
   terminal.print(Text.cute);
 }
 
-const Commands: any = { help, link, go, clear, game, cute };
+const Commands: any = { help, link, get, go, clear, game, cute };
 export default Commands;

@@ -1,4 +1,5 @@
 import { Disclosure } from "@headlessui/react";
+import Text from "content/text.json";
 import { CodeIcon, MenuIcon, XIcon } from "@heroicons/react/outline";
 
 const navigation = [
@@ -6,6 +7,11 @@ const navigation = [
   { name: "About Me", href: "#about-me", current: false },
   { name: "Projects", href: "#projects", current: false },
   { name: "Resume", href: "#resume", current: false },
+];
+
+const social = [
+  { name: "Github", href: Text.links.github, icon: Text.files.githubIcon },
+  { name: "LinkedIn", href: Text.links.linkedin, icon: Text.files.linkedinIcon },
 ];
 
 function classNames(...classes: any) {
