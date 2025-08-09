@@ -13,5 +13,13 @@ function quit(args: string[], terminal: TerminalModel) {
   terminal.quitGame();
 }
 
-const Commands: any = { help, clear, quit };
+function restart(args: string[], terminal: TerminalModel) {
+  terminal.getGame().restart(terminal, true);
+}
+
+function hint(args: string[], terminal: TerminalModel) {
+  terminal.print(Text.notImplemented);
+}
+
+const Commands: any = { help, clear, quit, restart, hint };
 export default Commands;

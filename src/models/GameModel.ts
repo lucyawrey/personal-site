@@ -1,6 +1,6 @@
 import Text from "content/text.json";
 import GameScript from "content/game-script.txt";
-import { isClient } from "utilities/helpers";
+import { isClient, trimQuotes } from "utilities/helpers";
 import { TerminalModel } from "./TerminalModel";
 
 export class GameModel {
@@ -8,6 +8,7 @@ export class GameModel {
 
   public scriptPosition: number = 0;
   public playerName: string = "";
+  public data: any = {};
 
   constructor() {
     if (isClient()) {
@@ -15,48 +16,92 @@ export class GameModel {
     }
   }
 
+  /// TODO much better script processing logic
   public loop(terminal: TerminalModel) {
     while (true) {
       if (this.scriptPosition >= this.script.length) {
         this.end(terminal);
         break;
       }
-
-      const line = this.script[this.scriptPosition];
-
-      const trim = line.trim();
-      if (trim.startsWith("$")) {
-        const args = trim.substring(1).trimStart().toLowerCase().split(/\s+/);
-        const cmd = args[0];
-        args.splice(0, 1);
+      let line = this.script[this.scriptPosition].trim();
+      // Replace variables
+      line = line.replace(/\[\s*([a-zA-Z0-9_+]+)\s*\]/g, (match) => {
+        match = match.replace(/[\[\]\s]*/g, "");
+        let value = this.data[match];
+        if (value) {
+          let string = value.toString();
+          if (/\s/.test(string)) {
+            return "`" + string + "`";
+          }
+          return string;
+        } else {
+          return `[Invalid Variable: ${match}]`;
+        }
+      });
+      console.log(line);
+      // Match tokens
+      const match = line.match(/(?:[^\s"'`]+|[`'"][^`'"]*["'`])+/g);
+      if (match) {
+        let cmd = match[0];
         if (cmd === "jump") {
-          this.scriptPosition = parseInt(args[0]) - 1;
+          this.scriptPosition = parseInt(match[1]) - 1;
+        }
+        if (cmd === "set") {
+          this.data[match[1]] = trimQuotes(match[2]);
         } else if (cmd === "wait") {
           this.scriptPosition++;
           break;
         } else if (cmd === "end") {
           this.end(terminal);
           break;
+        } else if (cmd === "choice") {
+          for (let i = 0; ; i += 2) {
+            if (match[1 + i] && match[2 + i]) {
+              let option = trimQuotes(match[1 + i]);
+              terminal.print(`  ${(i + 2) / 2}) ${option}`);
+              //todo jump to logic
+            } else {
+              break;
+            }
+          }
+        } else if (cmd === "print") {
+          this.print(terminal, match[1], match[2]);
+        } else if (cmd.startsWith('"')) {
+          this.print(terminal, cmd, match[1]);
         } else {
-          terminal.print(`[text-red-500]Error, invalid script command: ${cmd}.`);
+          terminal.print(`[text-red-500]Error, invalid script command: ${match[0]}.`);
         }
-      } else {
-        terminal.print(line);
       }
 
       this.scriptPosition++;
-      this.gameSave();
+    }
+  }
+
+  public restart(terminal: TerminalModel, resume: boolean = false) {
+    this.scriptPosition = 0;
+    if (resume) {
+      this.loop(terminal);
     }
   }
 
   public end(terminal: TerminalModel) {
-    this.scriptPosition = 0;
+    this.restart(terminal);
     this.gameSave();
     terminal.quitGame();
   }
 
+  private print(terminal: TerminalModel, text: string, classNames: string) {
+    text = trimQuotes(text);
+    if (classNames) {
+      text = "[" + trimQuotes(classNames) + "]" + text;
+    }
+    terminal.print(text);
+    this.gameSave();
+  }
+
   private gameSave() {
     const json = JSON.stringify({
+      data: this.data,
       scriptPosition: this.scriptPosition,
       playerName: this.playerName,
     });
@@ -67,6 +112,7 @@ export class GameModel {
     const json = localStorage.getItem(Text.gameDataStorageKey);
     if (json) {
       const data = JSON.parse(json);
+      this.data = data.data;
       this.scriptPosition = data.scriptPosition;
       this.playerName = data.playerName;
     }

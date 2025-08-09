@@ -4,39 +4,31 @@ import Text from "content/text.json";
 import HeaderBar from "components/HeaderBar";
 import Head from "next/head";
 import Layout from "components/Layout";
+import Section from "components/Section";
 
 const terminal = new TerminalModel();
 
 function Home() {
   return (
     <Layout>
-      <div id="home" className="min-h-full">
+      <div className="min-h-full">
         <Head>
           <title>Lucy Awrey's Personal Website</title>
         </Head>
         <main>
-          <div className="max-w-3xl mx-auto py-6 sm:px-6 lg:px-8">
+          <div className="max-w-[52rem] mx-auto py-6 sm:px-6 lg:px-8">
             <Terminal terminal={terminal} />
-            <p className="m-1 text-gray-500">{Text.terminalHelp}</p>
+            <p className="m-1 text-gray-800">{Text.terminalHelp}</p>
           </div>
-          <section className="bg-white shadow mt-8 mb-24 pb-4 container md:w-3/4 mx-auto text-xl text-center">
-            <header className="py-6 border-dashed border-b-2 border-gray-500 mb-4">
-              <h1 id="construction" className="text-3xl font-bold text-gray-900 text-center">
-                👷‍♀️ Under Construction 👷‍♀️
-              </h1>
-            </header>
-            <p className="px-12 py-6">{Text.construction}</p>
-          </section>
-          <section className="bg-white shadow my-8 pb-4 container md:w-3/4 mx-auto text-lg">
-            <HeaderBar id="resume">Resume</HeaderBar>
+          <Section title="About Me" id="about-me">
             <p className="px-6 py-1">{Text.lorem1}</p>
-            <p className="px-6 py-1">{Text.lorem2}</p>
-          </section>
-          <section className="bg-white shadow my-8 pb-4 container md:w-3/4 mx-auto text-lg">
-            <HeaderBar id="projects">Projects</HeaderBar>
+          </Section>
+          <Section title="Resume" id="resume">
             <p className="px-6 py-1">{Text.lorem3}</p>
-            <p className="px-6 py-1">{Text.lorem1}</p>
-          </section>
+          </Section>
+          <Section title="Projects" id="projects">
+            <p className="px-6 py-1">{Text.lorem2}</p>
+          </Section>
         </main>
       </div>
     </Layout>
