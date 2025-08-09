@@ -14,7 +14,6 @@ export default function run(line: string, terminal: TerminalModel) {
       terminal.print(Text.errorNotFound, cmd);
     }
   } else if (terminal.program === "game") {
-    console.log(cmd);
     try {
       GameCommands[cmd](args, terminal);
     } catch {
