@@ -20,15 +20,24 @@ function Home() {
             <Terminal terminal={terminal} />
             <p className="m-1 text-gray-800">{Text.terminalHelp}</p>
           </div>
+
           <Section title="About Me" id="about-me">
-            <div className="flex">
-              <img src={Text.files.photo} className="w-1/2 rounded-md border-gray-500 border-2" />
-              <p className="w-1/2 block ml-5">{Text.aboutMe}</p>
+            <div className="md:flex">
+              <img
+                src={Text.files.photo}
+                className="rounded-md border-gray-500 border-2 md:w-1/2"
+              />
+              <p className="block mt-6 md:w-1/2 md:ml-5 md:mt-0">{Text.aboutMe}</p>
             </div>
           </Section>
-          <Section title="Resume" id="resume">
+
+          <section
+            id="resume"
+            className="max-w-7xl bg-white shadow my-8 pb-8 px-10 lg:px-20 container md:w-10/12 mx-auto text-lg"
+          >
             <Pdf fileUrl={Text.files.resume} />
-          </Section>
+          </section>
+
           <Section title="Projects" id="projects">
             <p>{Text.projects}</p>
           </Section>
