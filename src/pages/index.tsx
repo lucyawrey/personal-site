@@ -21,13 +21,13 @@ function Home() {
             <p className="m-1 text-gray-800">{Text.terminalHelp}</p>
           </div>
           <Section title="About Me" id="about-me">
-            <p className="px-6 py-1">{Text.lorem1}</p>
+            <p>{Text.aboutMe}</p>
           </Section>
           <Section title="Resume" id="resume">
-            <p className="px-6 py-1">{Text.lorem3}</p>
+            <p>{Text.resume}</p>
           </Section>
           <Section title="Projects" id="projects">
-            <p className="px-6 py-1">{Text.lorem2}</p>
+            <p>{Text.projects}</p>
           </Section>
         </main>
       </div>
