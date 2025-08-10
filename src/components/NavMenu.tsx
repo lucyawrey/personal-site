@@ -49,6 +49,7 @@ function NavMenu() {
                     ))}
                     {social.map((item, i) => (
                       <a
+                        target="_blank"
                         key={item.name}
                         href={item.href}
                         className={classNames(
@@ -97,6 +98,7 @@ function NavMenu() {
               ))}
               {social.map((item, i) => (
                 <Disclosure.Button
+                  target="_blank"
                   key={item.name}
                   as="a"
                   href={item.href}

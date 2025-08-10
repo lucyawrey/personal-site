@@ -8,7 +8,6 @@ To run the development server:
 
 ```bash
 pnpm install
-# or
 pnpm run dev
 ```
 
@@ -18,3 +17,12 @@ pnpm run dev
 - [React](https://react.dev)
 - [tailwindcss](https://tailwindcss.com)
 - [MobX](https://mobx.js.org)
+
+## Development Todo
+
+- [ ] Fix resume PDF preview sizing in Resume section.
+- [ ] Add resume download link in Resume section.
+- [ ] Add email and socials to About Me section.
+- [ ] Fix image aspect ratio squish in About Me section.
+- [ ] Implement Projects section
+- [ ] Test website for accessability and implement needed changes
