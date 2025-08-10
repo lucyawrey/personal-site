@@ -4,7 +4,8 @@
   "files": {
     "resume": "Lucy_Awrey_Resume_2025.pdf",
     "githubIcon": "github_icon.svg",
-    "linkedinIcon": "linkedin_icon.svg"
+    "linkedinIcon": "linkedin_icon.svg",
+    "photo": "lucy.jpg"
   },
   "links": {
     "github": "https://github.com/lucyawrey",
@@ -20,8 +21,7 @@
   "terminalHelp": "Try typing \"help\" for a list of available commands.",
   "helpCommand": "[text-blue-500]  - go <home|projects|resume|about-me>: navigate to a given section\n  - link <github|linkedin>: open a given external link\n  - get <resume>: download or open a given file, depending on browser\n  - email <show|send>: show Lucy's email, or send with email app now\n  - help: show a list of available commands\n  - clear: clear all terminal text\n  - game: start the text adventure game 'Awakening Quest'\n",
   "copy": "© 2025 Lucy Awrey",
-  "aboutMe": "I am Lucy.",
-  "resume": "Resume here!",
+  "aboutMe": "I am Lucy. I'm alright.",
   "projects": "A listing of my personal programming projects is coming soon. For now, check out my Github. A link is available in both the navigation menu and the interactive terminal.",
   "email": "lucyawrey@gmail.com",
   "cute": "You found the secret command! You're probably very smart and really cute :)",
