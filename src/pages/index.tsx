@@ -1,10 +1,10 @@
 import Terminal from "components/Terminal";
 import { TerminalModel } from "models/TerminalModel";
 import Text from "content/text.json";
-import HeaderBar from "components/HeaderBar";
 import Head from "next/head";
 import Layout from "components/Layout";
 import Section from "components/Section";
+import Pdf from "components/Pdf";
 
 const terminal = new TerminalModel();
 
@@ -21,10 +21,13 @@ function Home() {
             <p className="m-1 text-gray-800">{Text.terminalHelp}</p>
           </div>
           <Section title="About Me" id="about-me">
-            <p>{Text.aboutMe}</p>
+            <div className="flex">
+              <img src={Text.files.photo} className="w-1/2 rounded-md border-gray-500 border-2" />
+              <p className="w-1/2 block ml-5">{Text.aboutMe}</p>
+            </div>
           </Section>
           <Section title="Resume" id="resume">
-            <p>{Text.resume}</p>
+            <Pdf fileUrl={Text.files.resume} />
           </Section>
           <Section title="Projects" id="projects">
             <p>{Text.projects}</p>
