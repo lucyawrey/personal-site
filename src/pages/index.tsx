@@ -31,12 +31,9 @@ function Home() {
             </div>
           </Section>
 
-          <section
-            id="resume"
-            className="max-w-7xl bg-white shadow my-8 pb-8 px-10 lg:px-20 container md:w-10/12 mx-auto text-lg"
-          >
+          <Section title="Resume" id="resume">
             <Pdf fileUrl={Text.files.resume} />
-          </section>
+          </Section>
 
           <Section title="Projects" id="projects">
             <p>{Text.projects}</p>
