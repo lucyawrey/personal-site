@@ -40,7 +40,7 @@ export class TerminalModel {
       this.print("> " + cleaned);
       run(cleaned, this);
     } else if (this.program === "game") {
-      this.game.loop(this);
+      this.game.loop(this, -1);
     } else {
       this.print(">");
     }
