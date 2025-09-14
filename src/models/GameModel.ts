@@ -46,7 +46,10 @@ export class GameModel {
           terminal.print(`${i + 1}. ${choice.text}`);
         });
       }
+    } else {
+      this.end(terminal);
     }
+    this.gameSave();
   }
 
   public restart(terminal: TerminalModel, resume: boolean = false) {
