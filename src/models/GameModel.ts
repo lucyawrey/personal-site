@@ -1,14 +1,11 @@
 import Text from "content/text.json";
-import GameScript from "content/game-script.txt";
+import StoryContent from "content/awakening_quest.ink";
 import { isClient, trimQuotes } from "utilities/helpers";
 import { TerminalModel } from "./TerminalModel";
+import { Compiler, Story } from "inkjs/compiler/Compiler";
 
 export class GameModel {
-  public readonly script: string[] = (GameScript as string).split("\n");
-
-  public scriptPosition: number = 0;
-  public playerName: string = "";
-  public data: any = {};
+  public story: Story = new Compiler(StoryContent).Compile();
 
   constructor() {
     if (isClient()) {
@@ -16,69 +13,22 @@ export class GameModel {
     }
   }
 
-  /// TODO much better script processing logic
   public loop(terminal: TerminalModel) {
-    while (true) {
-      if (this.scriptPosition >= this.script.length) {
-        this.end(terminal);
-        break;
+    while (this.story.canContinue) {
+      let current_text = this.story.Continue();
+      if (current_text === null) {
+        return;
       }
-      let line = this.script[this.scriptPosition].trim();
-      // Replace variables
-      line = line.replace(/\[\s*([a-zA-Z0-9_+]+)\s*\]/g, (match) => {
-        match = match.replace(/[\[\]\s]*/g, "");
-        let value = this.data[match];
-        if (value) {
-          let string = value.toString();
-          if (/\s/.test(string)) {
-            return "`" + string + "`";
-          }
-          return string;
-        } else {
-          return `[Invalid Variable: ${match}]`;
-        }
-      });
-      console.log(line);
-      // Match tokens
-      const match = line.match(/(?:[^\s"'`]+|[`'"][^`'"]*["'`])+/g);
-      if (match) {
-        let cmd = match[0];
-        if (cmd === "jump") {
-          this.scriptPosition = parseInt(match[1]) - 1;
-        }
-        if (cmd === "set") {
-          this.data[match[1]] = trimQuotes(match[2]);
-        } else if (cmd === "wait") {
-          this.scriptPosition++;
-          break;
-        } else if (cmd === "end") {
-          this.end(terminal);
-          break;
-        } else if (cmd === "choice") {
-          for (let i = 0; ; i += 2) {
-            if (match[1 + i] && match[2 + i]) {
-              let option = trimQuotes(match[1 + i]);
-              terminal.print(`  ${(i + 2) / 2}) ${option}`);
-              //todo jump to logic
-            } else {
-              break;
-            }
-          }
-        } else if (cmd === "print") {
-          this.print(terminal, match[1], match[2]);
-        } else if (cmd.startsWith('"')) {
-          this.print(terminal, cmd, match[1]);
-        } else {
-          terminal.print(`[text-red-500]Error, invalid script command: ${match[0]}.`);
-        }
+      if (this.story.currentTags && this.story.currentTags.length > 0) {
+        const classNames = this.story.currentTags.join(" ");
+        current_text = `[${classNames}]${current_text}`;
       }
-
-      this.scriptPosition++;
+      terminal.print(current_text + "\n");
     }
   }
 
   public restart(terminal: TerminalModel, resume: boolean = false) {
-    this.scriptPosition = 0;
+    this.story.ResetState();
     if (resume) {
       this.loop(terminal);
     }
@@ -90,31 +40,15 @@ export class GameModel {
     terminal.quitGame();
   }
 
-  private print(terminal: TerminalModel, text: string, classNames: string) {
-    text = trimQuotes(text);
-    if (classNames) {
-      text = "[" + trimQuotes(classNames) + "]" + text;
-    }
-    terminal.print(text);
-    this.gameSave();
-  }
-
   private gameSave() {
-    const json = JSON.stringify({
-      data: this.data,
-      scriptPosition: this.scriptPosition,
-      playerName: this.playerName,
-    });
+    const json = this.story.state.ToJson();
     localStorage.setItem(Text.gameDataStorageKey, json);
   }
 
   private gameLoad() {
     const json = localStorage.getItem(Text.gameDataStorageKey);
     if (json) {
-      const data = JSON.parse(json);
-      this.data = data.data;
-      this.scriptPosition = data.scriptPosition;
-      this.playerName = data.playerName;
+      this.story.state.LoadJson(json);
     }
   }
 }

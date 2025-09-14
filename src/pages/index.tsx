@@ -4,7 +4,6 @@ import Text from "content/text.json";
 import Head from "next/head";
 import Layout from "components/Layout";
 import Section from "components/Section";
-import Pdf from "components/Pdf";
 
 const terminal = new TerminalModel();
 
@@ -32,7 +31,7 @@ function Home() {
           </Section>
 
           <Section title="Resume" id="resume">
-            <Pdf fileUrl={Text.files.resume} />
+            <p>Resume</p>
           </Section>
 
           <Section title="Projects" id="projects">
