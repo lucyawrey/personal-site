@@ -14,6 +14,11 @@ export default function run(line: string, terminal: TerminalModel) {
       terminal.print(Text.errorNotFound, cmd);
     }
   } else if (terminal.program === "game") {
+    const number = Number(cmd);
+    if (number) {
+      terminal.getGame().loop(terminal, number);
+      return;
+    }
     try {
       GameCommands[cmd](args, terminal);
     } catch {
