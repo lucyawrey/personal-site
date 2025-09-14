@@ -26,12 +26,21 @@ function Home() {
                 src={Text.files.photo}
                 className="rounded-md border-gray-500 border-2 md:w-1/2"
               />
-              <p className="block mt-6 md:w-1/2 md:ml-5 md:mt-0">{Text.aboutMe}</p>
+              <div className="mt-6 md:w-1/2 md:ml-5 md:mt-0">
+                <h2 className="text-2xl font-bold text-gray-700 text-center">Email</h2>
+                <a
+                  className="block font-medium text-xl text-blue-600 dark:text-blue-500 hover:underline text-center"
+                  href={`mailto:${Text.email}`}
+                >
+                  {Text.email}
+                </a>
+                <p className="mt-4">{Text.aboutMe}</p>
+              </div>
             </div>
           </Section>
 
           <Section title="Resume" id="resume">
-            <p>Resume</p>
+            <p>Resume coming soon!</p>
           </Section>
 
           <Section title="Projects" id="projects">

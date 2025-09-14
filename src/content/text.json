@@ -22,7 +22,7 @@
   "terminalHelp": "Try typing \"help\" for a list of available commands.",
   "helpCommand": "[text-blue-500]  - go <home|projects|resume|about-me>: navigate to a given section\n  - link <github|linkedin>: open a given external link\n  - get <resume>: download or open a given file, depending on browser\n  - email <show|send>: show Lucy's email, or send with email app now\n  - help: show a list of available commands\n  - clear: clear all terminal text\n  - game: start the text adventure game 'Awakening Quest'\n",
   "copy": "© 2025 Lucy Awrey",
-  "aboutMe": "Hi, I'm Lucy. I am a web developer who is currently looking for work (check out my resume below). In my spare time I cook and play board games. In the future I want to add more to this bio, but I am currently busy improving the rest of this website.",
+  "aboutMe": "Hi, I'm Lucy. I am a web developer who is currently looking for work (check out my resume below). In my spare time I like to cook, tinker with software projects, and play board games. In the future I want to add more to this blurb about myself, but I am currently busy improving the rest of this website.",
   "projects": "A listing of my personal programming projects is coming soon. For now, check out my Github. A link is available in both the navigation menu and the interactive terminal.",
   "email": "lucyawrey@gmail.com",
   "cute": "You found the secret command! You're probably very smart and really cute :)",

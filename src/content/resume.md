@@ -1,11 +1,3 @@
-# Lucy Awrey
-
-## (810) 360-5047 — lucyawrey@gmail.com
-
-## github.com/lucyawrey — lucyawrey.com
-
----
-
 **OBJECTIVE:** A backend web development, full stack web development, or technical management role.
 
 ---
@@ -15,10 +7,8 @@
 - Proficient in C#, JavaScript, and TypeScript
 - Familiar with Rust, Python, Java, C++, and PHP
 - Experience in database technologies, particularly SQL (Postgres, SQLite) and Azure CosmosDB
-- Experience with the .NET ecosystem; React and the NodeJS ecosystem; the Unity game engine,
-  and several other web development and game development technologies
-- Experience leading a small team of developers along with related software architecture and
-  project management work
+- Experience with the .NET ecosystem; React and the NodeJS ecosystem; the Unity game engine, and several other web development and game development technologies
+- Experience leading a small team of developers along with related software architecture and project management work
 - Great at inter-team and cross-team communication and code documentation
 
 ---
@@ -43,11 +33,7 @@ Easter Michigan University **On hold due to other obligations**
 
 - Major – Computer Science **Completed three years**
 
-Washtenaw Community College/WTMC **2014 - 2017**
+Washtenaw Community College **2014 - 2017**
 
 - Major – Computer Science
-- High School | Community College Dual Enrollment, Transferred Credit to EMU
-
-Charyl Stockwell Preparatory Academy **2012 - 2014**
-
-- General Education – High School
+- Dual Enrolled during Highschool, Transferred Credit to EMU
