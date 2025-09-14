@@ -16,6 +16,7 @@
   "errorLinkArgument": "[text-red-500]Please give an external site to link to <github|linkedin>.",
   "errorGetArgument": "[text-red-500]Please give the file to download <resume>.",
   "errorEmailArgument": "[text-red-500]Please choose an option <show|send>.",
+  "errorGame": "[text-red-500]Game error.",
   "notImplemented": "[text-green-500]NOT IMPLEMENTED.",
   "terminalStart": "Lucy Awrey's Personal Website\n\n",
   "terminalHelp": "Try typing \"help\" for a list of available commands.",

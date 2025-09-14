@@ -93,8 +93,12 @@ export class TerminalModel {
   }
 
   public startGame() {
-    this.program = "game";
-    this.game.loop(this);
+    try {
+      this.program = "game";
+      this.game.loop(this);
+    } catch (e) {
+      this.print(`${Text.errorGame} ${e}`);
+    }
   }
 
   public quitGame() {
