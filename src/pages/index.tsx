@@ -40,7 +40,12 @@ function Home() {
           </Section>
 
           <Section title="Resume" id="resume">
-            <p>Resume coming soon!</p>
+            <a
+              href={Text.files.resume}
+              className="block text-center m-10 text-white bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-lg px-5 py-2.5 focus:outline-none dark:focus:ring-blue-800"
+            >
+              Download
+            </a>
           </Section>
 
           <Section title="Projects" id="projects">
