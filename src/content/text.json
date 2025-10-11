@@ -27,7 +27,7 @@
   "email": "lucyawrey@gmail.com",
   "cute": "You found the secret command! You're probably very smart and really cute :)",
   "game": {
-    "end": "Ending Game...\n\n",
+    "end": "[text-gray-400]THE END\n\n",
     "gameNoAction": "[text-green-500]That is not a valid action, try something else.",
     "helpCommand": "[text-green-500]  - quit: quit game and return to the normal terminal\n  - restart: restart the game from the beginning\n  - hint: give a hint for the current action to take\n  - help: show a list of available game commands\n  - clear: clear all terminal text\n"
   }

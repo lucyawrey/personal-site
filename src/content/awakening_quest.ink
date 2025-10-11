@@ -1,10 +1,15 @@
-Welcome to the small text adventure game I've included in this site, Awakening Quest! #text-blue-500
-The game is currently under construction, so it does not have a lot of features yet. Remember that you can use the commands "quit", "hint", and "help" at any time. #text-green-500
-This text adventure is written in the Ink narrative scripting language, and is powered by the inkjs package.
-Adding more interactive features to this text adventure comes after the rest of the website is finished. Stay tuned!
+Welcome to the text adventure game I've included in this site! #text-blue-500
+The game is still in development, so it does not have much content yet. Remember that you can use the "help" command at any time. #text-blue-500
 
-+ continue
+* Press enter to start.
+- << Awakening Quest >> #text-green-500
+You awake lying in the grass. The grass is comfortable, the air is warm, and above you is an endless expanse of cloudless blue sky. You hear the loud rush of water nearby.
 
-Goodbye!
+* Sit up and look around.
+    You find that you on a small circular island surrounded on almost all sides by massive waterfalls. It is breathtaking. Only a small land bridge behind you offers means of leaving this place, but you are not sure you want to.
+    The rest of the game is coming soon!
+* Just lie there. It's nice.
+    It is nice! You relax, and fall asleep.
+- * Press enter to continue.
 
 -> END
