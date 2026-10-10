@@ -1,116 +1,96 @@
 import { Disclosure } from "@headlessui/react";
-import Text from "content/text.json";
 import { CodeIcon, MenuIcon, XIcon } from "@heroicons/react/outline";
+import { GithubIcon, LinkedinIcon } from "components/Icons";
+import { profile } from "content/profile";
 
 const navigation = [
-  { name: "Home", href: "#home", current: true },
-  { name: "About Me", href: "#about-me", current: false },
-  { name: "Projects", href: "#projects", current: false },
-  { name: "Resume", href: "#resume", current: false },
+  { name: "Projects", href: "#projects" },
+  { name: "Experience", href: "#experience" },
+  { name: "Skills", href: "#skills" },
+  { name: "About", href: "#about" },
+  { name: "Contact", href: "#contact" },
 ];
 
 const social = [
-  { name: "Github", href: Text.links.github, icon: Text.files.githubIcon },
-  { name: "LinkedIn", href: Text.links.linkedin, icon: Text.files.linkedinIcon },
+  { name: "GitHub", href: profile.links.github, Icon: GithubIcon },
+  { name: "LinkedIn", href: profile.links.linkedin, Icon: LinkedinIcon },
 ];
-
-function classNames(...classes: any) {
-  return classes.filter(Boolean).join(" ");
-}
 
 function NavMenu() {
   return (
-    <Disclosure as="nav" className="bg-gray-800">
+    <Disclosure
+      as="nav"
+      className="sticky top-0 z-10 border-b border-slate-200 bg-white/90 backdrop-blur dark:border-slate-800 dark:bg-slate-950/90"
+    >
       {({ open }) => (
         <>
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex items-center justify-between h-16">
-              <div className="flex items-center w-full">
-                <div className="flex-shrink-0">
-                  <CodeIcon className="text-blue-500 h-8 w-8 inline" />
-                  <span className="text-blue-500 px-3 text-lg font-medium">Lucy Awrey</span>
-                </div>
-                <div className="hidden md:block w-full">
-                  <div className="ml-6 flex items-baseline space-x-4 lg:mr-6">
-                    {navigation.map((item) => (
-                      <a
-                        key={item.name}
-                        href={item.href}
-                        className={classNames(
-                          item.current
-                            ? "bg-gray-900 text-white"
-                            : "text-gray-300 hover:bg-gray-700 hover:text-white",
-                          "px-3 md:px-2 py-2 rounded-md text-sm font-medium"
-                        )}
-                        aria-current={item.current ? "page" : undefined}
-                      >
-                        {item.name}
-                      </a>
-                    ))}
-                    {social.map((item, i) => (
-                      <a
-                        target="_blank"
-                        key={item.name}
-                        href={item.href}
-                        className={classNames(
-                          "text-gray-300 hover:bg-gray-700 hover:text-white px-3 md:px-2 py-2 rounded-md text-sm font-medium",
-                          i === 0 ? "!ml-auto" : ""
-                        )}
-                      >
-                        <img src={item.icon} className="w-7 h-7 inline-block mr-2 mb-1" />
-                        {item.name}
-                      </a>
-                    ))}
-                  </div>
-                </div>
+              <a href="#top" className="flex items-center gap-2 text-blue-600 dark:text-blue-400">
+                <CodeIcon className="h-7 w-7" aria-hidden="true" />
+                <span className="text-lg font-semibold">{profile.name}</span>
+              </a>
+              <div className="hidden md:flex items-center gap-1">
+                {navigation.map((item) => (
+                  <a
+                    key={item.name}
+                    href={item.href}
+                    className="px-3 py-2 rounded-md text-sm font-medium text-slate-600 hover:bg-slate-100 hover:text-slate-900 dark:text-slate-300 dark:hover:bg-slate-800 dark:hover:text-white"
+                  >
+                    {item.name}
+                  </a>
+                ))}
+                <span className="mx-2 h-6 w-px bg-slate-200 dark:bg-slate-700" aria-hidden="true" />
+                {social.map(({ name, href, Icon }) => (
+                  <a
+                    key={name}
+                    href={href}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="p-2 rounded-md text-slate-500 hover:bg-slate-100 hover:text-slate-900 dark:text-slate-400 dark:hover:bg-slate-800 dark:hover:text-white"
+                  >
+                    <Icon className="h-5 w-5" />
+                    <span className="sr-only">{name}</span>
+                  </a>
+                ))}
               </div>
-              <div className="-mr-2 flex md:hidden">
-                {/* Mobile menu button */}
-                <Disclosure.Button className="bg-gray-800 inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
-                  <span className="sr-only">Open main menu</span>
-                  {open ? (
-                    <XIcon className="block h-6 w-6" aria-hidden="true" />
-                  ) : (
-                    <MenuIcon className="block h-6 w-6" aria-hidden="true" />
-                  )}
-                </Disclosure.Button>
-              </div>
+              <Disclosure.Button className="md:hidden inline-flex items-center justify-center p-2 rounded-md text-slate-500 hover:bg-slate-100 hover:text-slate-900 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:text-slate-400 dark:hover:bg-slate-800 dark:hover:text-white">
+                <span className="sr-only">{open ? "Close main menu" : "Open main menu"}</span>
+                {open ? (
+                  <XIcon className="block h-6 w-6" aria-hidden="true" />
+                ) : (
+                  <MenuIcon className="block h-6 w-6" aria-hidden="true" />
+                )}
+              </Disclosure.Button>
             </div>
           </div>
 
-          <Disclosure.Panel className="md:hidden">
-            <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+          <Disclosure.Panel className="md:hidden border-t border-slate-200 dark:border-slate-800">
+            <div className="px-4 py-3 space-y-1">
               {navigation.map((item) => (
                 <Disclosure.Button
                   key={item.name}
                   as="a"
                   href={item.href}
-                  className={classNames(
-                    item.current
-                      ? "bg-gray-900 text-white"
-                      : "text-gray-300 hover:bg-gray-700 hover:text-white",
-                    "block px-3 py-2 rounded-md text-base font-medium"
-                  )}
-                  aria-current={item.current ? "page" : undefined}
+                  className="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:bg-slate-100 dark:text-slate-200 dark:hover:bg-slate-800"
                 >
                   {item.name}
                 </Disclosure.Button>
               ))}
-              {social.map((item, i) => (
-                <Disclosure.Button
-                  target="_blank"
-                  key={item.name}
-                  as="a"
-                  href={item.href}
-                  className={classNames(
-                    "text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium",
-                    i === 0 ? "!mt-4" : ""
-                  )}
-                >
-                  <img src={item.icon} className="w-7 h-7 inline-block mr-2 mb-1" />
-                  {item.name}
-                </Disclosure.Button>
-              ))}
+              <div className="flex gap-2 pt-2">
+                {social.map(({ name, href, Icon }) => (
+                  <a
+                    key={name}
+                    href={href}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="flex items-center gap-2 px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:bg-slate-100 dark:text-slate-200 dark:hover:bg-slate-800"
+                  >
+                    <Icon className="h-5 w-5" />
+                    {name}
+                  </a>
+                ))}
+              </div>
             </div>
           </Disclosure.Panel>
         </>

@@ -18,11 +18,13 @@ pnpm run dev
 - [tailwindcss](https://tailwindcss.com)
 - [MobX](https://mobx.js.org)
 
+## Updating content
+
+- Page content (projects, experience, skills, about) lives in `src/content/profile.ts`. Keep it in step with the master resume.
+- To update the resume PDF, download it from Google Docs and replace `public/Lucy_Awrey_Resume.pdf` (keep the same file name).
+- Terminal text and commands live in `src/content/text.json` and `src/utilities/commands.ts`.
+
 ## Development Todo
 
-- [ ] Fix resume PDF preview sizing in Resume section.
-- [ ] Add resume download link in Resume section.
-- [ ] Add email and socials to About Me section.
-- [ ] Fix image aspect ratio squish in About Me section.
-- [ ] Implement Projects section
-- [ ] Test website for accessability and implement needed changes
+- [ ] Add screenshots or images to the project cards.
+- [ ] Test website for accessibility and implement needed changes.
