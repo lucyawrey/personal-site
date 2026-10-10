@@ -11,7 +11,7 @@
     "comet": "https://shapeland.lucyawrey.com"
   },
   "errorNotFound": "[text-red-500]Command \"{}\" not found. Try typing \"help\" for a list of available commands.",
-  "errorGoArgument": "[text-red-500]Please give a section to jump to <top|projects|experience|skills|about|contact>.",
+  "errorGoArgument": "[text-red-500]Please give a section to jump to <top|projects|experience|skills|about|terminal|contact>.",
   "errorLinkArgument": "[text-red-500]Please give an external site to link to <github|linkedin|soultabletop|comet>.",
   "errorGetArgument": "[text-red-500]Please give the file to download <resume>.",
   "errorEmailArgument": "[text-red-500]Please choose an option <show|send>.",
@@ -19,7 +19,7 @@
   "notImplemented": "[text-green-500]NOT IMPLEMENTED.",
   "terminalStart": "Lucy Awrey · full-stack software engineer\n\n",
   "terminalHelp": "Try typing \"help\" for a list of available commands.",
-  "helpCommand": "[text-blue-500]  - go <top|projects|experience|skills|about|contact>: jump to a section\n  - link <github|linkedin|soultabletop|comet>: open a given external link\n  - get <resume>: download or open my resume PDF\n  - email <show|send>: show Lucy's email, or send with email app now\n  - help: show a list of available commands\n  - clear: clear all terminal text\n  - game: start the text adventure game 'Awakening Quest'\n",
+  "helpCommand": "[text-blue-500]  - go <top|projects|experience|skills|about|terminal|contact>: jump to a section\n  - link <github|linkedin|soultabletop|comet>: open a given external link\n  - get <resume>: download or open my resume PDF\n  - email <show|send>: show Lucy's email, or send with email app now\n  - help: show a list of available commands\n  - clear: clear all terminal text\n  - game: start the text adventure game 'Awakening Quest'\n",
   "email": "lucyawrey@gmail.com",
   "cute": "You found the secret command! You're probably very smart and really cute :)",
   "game": {
