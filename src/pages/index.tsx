@@ -200,13 +200,13 @@ function Home() {
               <p key={paragraph}>{paragraph}</p>
             ))}
           </div>
-          <div className="mt-10">
-            <h3 className="text-lg font-semibold text-slate-900 dark:text-white">
-              Prefer a command line?
-            </h3>
-            <p className="mt-1 mb-4">{Text.terminalHelp}</p>
-            <Terminal terminal={terminal} />
-          </div>
+        </Section>
+
+        <Section title="Try the terminal" id="terminal" eyebrow="Just for fun">
+          <p className="mb-4 text-lg">
+            Prefer a command line? {Text.terminalHelp} There's a small text adventure in there too.
+          </p>
+          <Terminal terminal={terminal} />
         </Section>
 
         <Section title="Get in touch" id="contact" eyebrow="Contact">
