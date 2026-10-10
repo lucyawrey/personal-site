@@ -7,8 +7,8 @@ function help(args: string[], terminal: TerminalModel) {
 }
 
 function link(args: string[], terminal: TerminalModel) {
-  if (args[0] && (args[0] === "linkedin" || args[0] === "github")) {
-    const link = Text.links[args[0]];
+  if (args[0] && args[0] in Text.links) {
+    const link = Text.links[args[0] as keyof typeof Text.links];
     if (isClient()) {
       window.open(link, "_blank")?.focus();
     }
