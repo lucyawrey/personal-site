@@ -1,5 +1,9 @@
 import Head from "next/head";
-import { DocumentDownloadIcon, ExternalLinkIcon, MailIcon } from "@heroicons/react/outline";
+import {
+  ArrowTopRightOnSquareIcon,
+  DocumentArrowDownIcon,
+  EnvelopeIcon,
+} from "@heroicons/react/24/outline";
 import Layout from "components/Layout";
 import Section from "components/Section";
 import Terminal from "components/Terminal";
@@ -11,11 +15,11 @@ import { education, experience, otherProjects, profile, projects, skills } from 
 const terminal = new TerminalModel();
 
 const primaryButton =
-  "inline-flex items-center gap-2 rounded-lg bg-blue-600 px-4 py-2.5 font-medium text-white hover:bg-blue-700 focus:outline-none focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-800";
+  "inline-flex items-center gap-2 rounded-lg bg-blue-600 px-4 py-2.5 font-medium text-white hover:bg-blue-700 focus:outline-hidden focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-800";
 const secondaryButton =
-  "inline-flex items-center gap-2 rounded-lg border border-slate-300 bg-white px-4 py-2.5 font-medium text-slate-700 hover:bg-slate-50 focus:outline-none focus:ring-4 focus:ring-slate-200 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-200 dark:hover:bg-slate-800 dark:focus:ring-slate-700";
+  "inline-flex items-center gap-2 rounded-lg border border-slate-300 bg-white px-4 py-2.5 font-medium text-slate-700 hover:bg-slate-50 focus:outline-hidden focus:ring-4 focus:ring-slate-200 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-200 dark:hover:bg-slate-800 dark:focus:ring-slate-700";
 const card =
-  "rounded-xl border border-slate-200 bg-white p-6 shadow-sm dark:border-slate-800 dark:bg-slate-900";
+  "rounded-xl border border-slate-200 bg-white p-6 shadow-xs dark:border-slate-800 dark:bg-slate-900";
 const tag =
   "rounded-full bg-slate-100 px-2.5 py-0.5 text-sm text-slate-700 dark:bg-slate-800 dark:text-slate-300";
 
@@ -45,11 +49,11 @@ function Home() {
               <p className="mt-5 text-lg leading-relaxed">{profile.intro}</p>
               <div className="mt-7 flex flex-wrap gap-3">
                 <a href={profile.resume} className={primaryButton}>
-                  <DocumentDownloadIcon className="h-5 w-5" aria-hidden="true" />
+                  <DocumentArrowDownIcon className="h-5 w-5" aria-hidden="true" />
                   Resume (PDF)
                 </a>
                 <a href={`mailto:${profile.email}`} className={secondaryButton}>
-                  <MailIcon className="h-5 w-5" aria-hidden="true" />
+                  <EnvelopeIcon className="h-5 w-5" aria-hidden="true" />
                   Email me
                 </a>
                 <a
@@ -116,7 +120,7 @@ function Home() {
                         className="inline-flex items-center gap-1 font-medium text-blue-600 hover:underline dark:text-blue-400"
                       >
                         {link.label}
-                        <ExternalLinkIcon className="h-4 w-4" aria-hidden="true" />
+                        <ArrowTopRightOnSquareIcon className="h-4 w-4" aria-hidden="true" />
                       </a>
                     ))}
                   </div>
@@ -217,11 +221,11 @@ function Home() {
             </p>
             <div className="mt-5 flex flex-wrap gap-3">
               <a href={`mailto:${profile.email}`} className={primaryButton}>
-                <MailIcon className="h-5 w-5" aria-hidden="true" />
+                <EnvelopeIcon className="h-5 w-5" aria-hidden="true" />
                 {profile.email}
               </a>
               <a href={profile.resume} className={secondaryButton}>
-                <DocumentDownloadIcon className="h-5 w-5" aria-hidden="true" />
+                <DocumentArrowDownIcon className="h-5 w-5" aria-hidden="true" />
                 Resume (PDF)
               </a>
             </div>

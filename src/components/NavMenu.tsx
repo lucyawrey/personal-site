@@ -1,5 +1,5 @@
-import { Disclosure } from "@headlessui/react";
-import { CodeIcon, MenuIcon, XIcon } from "@heroicons/react/outline";
+import { Disclosure, DisclosureButton, DisclosurePanel } from "@headlessui/react";
+import { Bars3Icon, CodeBracketIcon, XMarkIcon } from "@heroicons/react/24/outline";
 import { GithubIcon, LinkedinIcon } from "components/Icons";
 import { profile } from "content/profile";
 
@@ -21,14 +21,14 @@ function NavMenu() {
   return (
     <Disclosure
       as="nav"
-      className="sticky top-0 z-10 border-b border-slate-200 bg-white/90 backdrop-blur dark:border-slate-800 dark:bg-slate-950/90"
+      className="sticky top-0 z-10 border-b border-slate-200 bg-white/90 backdrop-blur-sm dark:border-slate-800 dark:bg-slate-950/90"
     >
       {({ open }) => (
         <>
           <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex items-center justify-between h-16">
               <a href="#top" className="flex items-center gap-2 text-blue-600 dark:text-blue-400">
-                <CodeIcon className="h-7 w-7" aria-hidden="true" />
+                <CodeBracketIcon className="h-7 w-7" aria-hidden="true" />
                 <span className="text-lg font-semibold">{profile.name}</span>
               </a>
               <div className="hidden md:flex items-center gap-1">
@@ -55,28 +55,28 @@ function NavMenu() {
                   </a>
                 ))}
               </div>
-              <Disclosure.Button className="md:hidden inline-flex items-center justify-center p-2 rounded-md text-slate-500 hover:bg-slate-100 hover:text-slate-900 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:text-slate-400 dark:hover:bg-slate-800 dark:hover:text-white">
+              <DisclosureButton className="md:hidden inline-flex items-center justify-center p-2 rounded-md text-slate-500 hover:bg-slate-100 hover:text-slate-900 focus:outline-hidden focus:ring-2 focus:ring-blue-500 dark:text-slate-400 dark:hover:bg-slate-800 dark:hover:text-white">
                 <span className="sr-only">{open ? "Close main menu" : "Open main menu"}</span>
                 {open ? (
-                  <XIcon className="block h-6 w-6" aria-hidden="true" />
+                  <XMarkIcon className="block h-6 w-6" aria-hidden="true" />
                 ) : (
-                  <MenuIcon className="block h-6 w-6" aria-hidden="true" />
+                  <Bars3Icon className="block h-6 w-6" aria-hidden="true" />
                 )}
-              </Disclosure.Button>
+              </DisclosureButton>
             </div>
           </div>
 
-          <Disclosure.Panel className="md:hidden border-t border-slate-200 dark:border-slate-800">
+          <DisclosurePanel className="md:hidden border-t border-slate-200 dark:border-slate-800">
             <div className="px-4 py-3 space-y-1">
               {navigation.map((item) => (
-                <Disclosure.Button
+                <DisclosureButton
                   key={item.name}
                   as="a"
                   href={item.href}
                   className="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:bg-slate-100 dark:text-slate-200 dark:hover:bg-slate-800"
                 >
                   {item.name}
-                </Disclosure.Button>
+                </DisclosureButton>
               ))}
               <div className="flex gap-2 pt-2">
                 {social.map(({ name, href, Icon }) => (
@@ -93,7 +93,7 @@ function NavMenu() {
                 ))}
               </div>
             </div>
-          </Disclosure.Panel>
+          </DisclosurePanel>
         </>
       )}
     </Disclosure>
