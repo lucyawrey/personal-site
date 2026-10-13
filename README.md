@@ -28,3 +28,7 @@ pnpm run dev
 
 - [ ] Add screenshots or images to the project cards.
 - [ ] Test website for accessibility and implement needed changes.
+
+## AI usage
+
+This project uses AI tools to assist with development. This means primarily code and tooling.
