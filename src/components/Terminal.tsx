@@ -85,7 +85,7 @@ const Terminal = observer(({ terminal }: TerminalProps) => {
   return (
     <div
       className="terminal-scroll overflow-y-auto overflow-x-hidden rounded-xl border-solid leading-tight border-gray-400
-        p-2 w-full h-112 bg-black text-white font-mono md:text-lg md:leading-7 border-t-24"
+        p-2 w-full h-80 bg-black text-white font-mono md:text-lg md:leading-7 border-t-24"
       ref={terminalRef}
       onClick={focus}
     >
