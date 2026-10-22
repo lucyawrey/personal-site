@@ -3,8 +3,8 @@
 profile:
   name: Lucy Awrey
   role: Full-stack software engineer
-  focus: C# / .NET · TypeScript · Vue · React
-  location: Ypsilanti, MI · open to remote or hybrid
+  focus: C#/.NET · JavaScript/TypeScript/Node · Microsoft Azure
+  location: Ypsilanti, MI (open to remote or hybrid)
   email: lucyawrey@gmail.com
   resume: Lucy_Awrey_Resume.pdf
   photo: lucy.jpg
@@ -48,11 +48,12 @@ projects:
     status: In development
     stack: [Nuxt 4, Vue 3, TypeScript, PostgreSQL]
     summary: >-
-      An open-source, web-based virtual tabletop and the successor to Lantern. I designed the
-      architecture and use Claude Code as a coding assistant, reviewing its work.
+      An open-source web-based virtual tabletop that is the successor to Lantern. An in-development
+      version is available at soultabletop.com. I designed the architecture and use Claude Code as a
+      coding assistant, reviewing its work.
     details:
       - Users can write their own game character sheets in a custom markup language with support for formulas and dice rolls.
-      - An account system with per-resource permissions.
+      - Includes an account system with per-resource permissions.
       - Built-in support for the Pathfinder game system.
     links:
       - { label: soultabletop.com, href: "https://soultabletop.com" }
@@ -70,21 +71,21 @@ projects:
       - Successfully load-tested it with 300 simulated players on AWS.
       - Earlier prototypes were in Rust.
     links:
-      - { label: Try the test build, href: "https://shapeland.lucyawrey.com" }
+      - { label: Try it, href: "https://shapeland.lucyawrey.com" }
 
   - name: Lantern
     years: 2019 – 2024
     status: Predecessor to Soul Tabletop
     stack: [Next.js, TypeScript, PostgreSQL, GraphQL]
     summary: >-
-      An early-stage virtual tabletop for the web that I co-developed. It's the predecessor to Soul
+      I co-developed an early-stage virtual tabletop for the web. It is the predecessor to Soul
       Tabletop.
     details: []
     links: []
 
 otherProjects: >-
-  A Minecraft modpack with custom Java and Kotlin mods, a visual novel in Godot, and this site
-  (Next.js, TypeScript, Tailwind CSS).
+  A Minecraft modpack with custom Java and Kotlin mods, a visual novel in Godot, and this site, my
+  Next.js portfolio.
 
 experience:
   - company: The Really Useful Information Company (TRUIC)
