@@ -1,4 +1,4 @@
-// Brand marks from Simple Icons (CC0), drawn with currentColor so they follow the theme.
+// Brand marks from Simple Icons (CC0).
 
 interface IconProps {
   className?: string;

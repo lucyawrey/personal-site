@@ -1,14 +1,17 @@
 import { TerminalModel } from "models/TerminalModel";
 import Text from "content/text.json";
+import { copy } from "content/copy";
 import { isClient, jump } from "utilities/helpers";
+
+const links: Record<string, string> = { ...copy.profile.links, ...Text.links };
 
 function help(args: string[], terminal: TerminalModel) {
   terminal.print(Text.helpCommand);
 }
 
 function link(args: string[], terminal: TerminalModel) {
-  if (args[0] && args[0] in Text.links) {
-    const link = Text.links[args[0] as keyof typeof Text.links];
+  if (args[0] && args[0] in links) {
+    const link = links[args[0]];
     if (isClient()) {
       window.open(link, "_blank")?.focus();
     }
@@ -21,7 +24,7 @@ function get(args: string[], terminal: TerminalModel) {
   if (args[0] && args[0] === "resume") {
     if (isClient()) {
       let a = document.createElement("a");
-      a.href = Text.files.resume;
+      a.href = copy.profile.resume;
       a.click();
     }
   } else {
@@ -49,11 +52,11 @@ function email(args: string[], terminal: TerminalModel) {
   if (args[0] && (args[0] === "show" || args[0] === "send")) {
     let option = args[0];
     if (option === "show") {
-      terminal.print(Text.email);
+      terminal.print(copy.profile.email);
     } else if (option === "send") {
       if (isClient()) {
         let a = document.createElement("a");
-        a.href = `mailto:${Text.email}`;
+        a.href = `mailto:${copy.profile.email}`;
         a.click();
       }
     }

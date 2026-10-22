@@ -10,7 +10,9 @@ import Terminal from "components/Terminal";
 import { GithubIcon, LinkedinIcon } from "components/Icons";
 import { TerminalModel } from "models/TerminalModel";
 import Text from "content/text.json";
-import { education, experience, otherProjects, profile, projects, skills } from "content/profile";
+import { copy } from "content/copy";
+
+const { profile, sections, projects, otherProjects, experience, education, skills } = copy;
 
 const terminal = new TerminalModel();
 
@@ -33,7 +35,6 @@ function Home() {
       </Head>
 
       <main id="top" className="text-slate-700 dark:text-slate-300">
-        {/* Hero */}
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-8 md:pt-20">
           <div className="flex flex-col-reverse gap-8 md:flex-row md:items-center md:justify-between">
             <div className="max-w-2xl">
@@ -84,7 +85,7 @@ function Home() {
           </div>
         </div>
 
-        <Section title="Projects" id="projects" eyebrow="What I'm building">
+        <Section id="projects" title={sections.projects.title} eyebrow={sections.projects.eyebrow}>
           <div className="grid gap-6">
             {projects.map((project) => (
               <article key={project.name} className={card}>
@@ -97,11 +98,13 @@ function Home() {
                   </p>
                 </div>
                 <p className="mt-3 leading-relaxed">{project.summary}</p>
-                <ul className="mt-3 list-disc space-y-1 pl-5">
-                  {project.details.map((detail) => (
-                    <li key={detail}>{detail}</li>
-                  ))}
-                </ul>
+                {project.details.length > 0 && (
+                  <ul className="mt-3 list-disc space-y-1 pl-5">
+                    {project.details.map((detail) => (
+                      <li key={detail}>{detail}</li>
+                    ))}
+                  </ul>
+                )}
                 <div className="mt-4 flex flex-wrap gap-2">
                   {project.stack.map((item) => (
                     <span key={item} className={tag}>
@@ -134,7 +137,11 @@ function Home() {
           </p>
         </Section>
 
-        <Section title="Experience" id="experience" eyebrow="Where I've worked">
+        <Section
+          id="experience"
+          title={sections.experience.title}
+          eyebrow={sections.experience.eyebrow}
+        >
           {experience.map((job) => (
             <article key={job.company} className={card}>
               <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
@@ -181,7 +188,7 @@ function Home() {
           </ul>
         </Section>
 
-        <Section title="Skills" id="skills" eyebrow="What I work with">
+        <Section id="skills" title={sections.skills.title} eyebrow={sections.skills.eyebrow}>
           <dl className="grid gap-6 sm:grid-cols-2">
             {skills.map(({ group, items }) => (
               <div key={group}>
@@ -198,27 +205,9 @@ function Home() {
           </dl>
         </Section>
 
-        <Section title="About me" id="about" eyebrow="A bit more">
-          <div className="max-w-3xl space-y-4 text-lg leading-relaxed">
-            {profile.about.map((paragraph) => (
-              <p key={paragraph}>{paragraph}</p>
-            ))}
-          </div>
-        </Section>
-
-        <Section title="Try the terminal" id="terminal" eyebrow="Just for fun">
-          <p className="mb-4 text-lg">
-            Prefer a command line? {Text.terminalHelp} There's a small text adventure in there too.
-          </p>
-          <Terminal terminal={terminal} />
-        </Section>
-
-        <Section title="Get in touch" id="contact" eyebrow="Contact">
+        <Section id="contact" title={sections.contact.title} eyebrow={sections.contact.eyebrow}>
           <div className={card}>
-            <p className="text-lg">
-              I'm open to backend and full-stack roles, remote or hybrid near Ann Arbor and
-              Ypsilanti. The best way to reach me is email.
-            </p>
+            <p className="text-lg">{sections.contact.text}</p>
             <div className="mt-5 flex flex-wrap gap-3">
               <a href={`mailto:${profile.email}`} className={primaryButton}>
                 <EnvelopeIcon className="h-5 w-5" aria-hidden="true" />
@@ -230,6 +219,13 @@ function Home() {
               </a>
             </div>
           </div>
+        </Section>
+
+        <Section id="terminal" title={sections.terminal.title} eyebrow={sections.terminal.eyebrow}>
+          <p className="mb-4 text-lg">
+            {sections.terminal.textBefore} {Text.terminalHelp} {sections.terminal.textAfter}
+          </p>
+          <Terminal terminal={terminal} />
         </Section>
       </main>
     </Layout>

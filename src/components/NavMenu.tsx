@@ -1,20 +1,19 @@
 import { Disclosure, DisclosureButton, DisclosurePanel } from "@headlessui/react";
 import { Bars3Icon, CodeBracketIcon, XMarkIcon } from "@heroicons/react/24/outline";
 import { GithubIcon, LinkedinIcon } from "components/Icons";
-import { profile } from "content/profile";
+import { copy } from "content/copy";
 
 const navigation = [
   { name: "Projects", href: "#projects" },
   { name: "Experience", href: "#experience" },
   { name: "Skills", href: "#skills" },
-  { name: "About", href: "#about" },
-  { name: "Terminal", href: "#terminal" },
   { name: "Contact", href: "#contact" },
+  { name: "Terminal", href: "#terminal" },
 ];
 
 const social = [
-  { name: "GitHub", href: profile.links.github, Icon: GithubIcon },
-  { name: "LinkedIn", href: profile.links.linkedin, Icon: LinkedinIcon },
+  { name: "GitHub", href: copy.profile.links.github, Icon: GithubIcon },
+  { name: "LinkedIn", href: copy.profile.links.linkedin, Icon: LinkedinIcon },
 ];
 
 function NavMenu() {
@@ -29,7 +28,7 @@ function NavMenu() {
             <div className="flex items-center justify-between h-16">
               <a href="#top" className="flex items-center gap-2 text-blue-600 dark:text-blue-400">
                 <CodeBracketIcon className="h-7 w-7" aria-hidden="true" />
-                <span className="text-lg font-semibold">{profile.name}</span>
+                <span className="text-lg font-semibold">{copy.profile.name}</span>
               </a>
               <div className="hidden md:flex items-center gap-1">
                 {navigation.map((item) => (

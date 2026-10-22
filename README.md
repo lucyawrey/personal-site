@@ -20,7 +20,7 @@ pnpm run dev
 
 ## Updating content
 
-- Page content (projects, experience, skills, about) lives in `src/content/profile.ts`. Keep it in step with the master resume.
+- Page copy (intro, projects, experience, skills, section headings) lives in `src/content/copy.yml`. Keep it in step with the master resume. Its shape is typed in `src/content/copy.ts`.
 - To update the resume PDF, download it from Google Docs and replace `public/Lucy_Awrey_Resume.pdf` (keep the same file name).
 - Terminal text and commands live in `src/content/text.json` and `src/utilities/commands.ts`.
 
