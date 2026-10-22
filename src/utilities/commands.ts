@@ -10,7 +10,7 @@ function help(args: string[], terminal: TerminalModel) {
 }
 
 function link(args: string[], terminal: TerminalModel) {
-  if (args[0] && args[0] in links) {
+  if (args[0] && Object.hasOwn(links, args[0])) {
     const link = links[args[0]];
     if (isClient()) {
       window.open(link, "_blank")?.focus();
@@ -33,7 +33,7 @@ function get(args: string[], terminal: TerminalModel) {
 }
 
 function go(args: string[], terminal: TerminalModel) {
-  if (args[0]) {
+  if (args[0] && document.getElementById(args[0].toLowerCase())) {
     jump(args[0].toLowerCase());
   } else {
     terminal.print(Text.errorGoArgument);
