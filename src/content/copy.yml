@@ -1,0 +1,133 @@
+# Keep the keys as they are: the page looks them up by name. Button labels are in the components.
+
+profile:
+  name: Lucy Awrey
+  role: Full-stack software engineer
+  focus: C#/.NET · JavaScript/TypeScript/Node · Microsoft Azure
+  location: Ypsilanti, MI (open to remote or hybrid)
+  email: lucyawrey@gmail.com
+  resume: Lucy_Awrey_Resume.pdf
+  photo: lucy.jpg
+  links:
+    github: https://github.com/lucyawrey
+    linkedin: https://www.linkedin.com/in/lucyawrey
+  # Also the page's meta description.
+  intro: >-
+    I'm a full-stack software engineer with 4.5+ years of professional experience building production
+    web apps on C#/.NET, JavaScript/TypeScript/Node and Microsoft Azure. I've developed features from
+    prototype to production, from backend to frontend, and later led a six-person team as interim
+    technical team lead. I've been programming since 2014, and I'm still building projects to learn
+    new tools.
+
+sections:
+  projects:
+    eyebrow: What I'm building
+    title: Projects
+  experience:
+    eyebrow: Where I've worked
+    title: Experience
+  skills:
+    eyebrow: What I work with
+    title: Skills
+  contact:
+    eyebrow: Contact
+    title: Get in touch
+    text: >-
+      I'm open to backend and full-stack roles, remote or hybrid near Ann Arbor and Ypsilanti. The
+      best way to reach me is email.
+  terminal:
+    eyebrow: Just for fun
+    title: Try the terminal
+    # The terminal's help hint from text.json goes between these.
+    textBefore: Prefer a command line?
+    textAfter: There's a small text adventure in there too.
+
+projects:
+  - name: Soul Tabletop
+    years: 2026 – present
+    status: In development
+    stack: [Nuxt 4, Vue 3, TypeScript, PostgreSQL]
+    summary: >-
+      An open-source web-based virtual tabletop that is the successor to Lantern. An in-development
+      version is available at soultabletop.com.
+    details:
+      - Users can write their own game character sheets in a custom markup language with support for formulas and dice rolls.
+      - Includes an account system with per-resource permissions.
+      - Built-in support for the Pathfinder game system.
+    links:
+      - { label: soultabletop.com, href: "https://soultabletop.com" }
+      - { label: Source, href: "https://github.com/lucyawrey/soultabletop" }
+
+  - name: Project Comet
+    years: 2024 – present
+    status: Playable prototype
+    stack: [.NET 10, C#, Unity, WebSockets]
+    summary: >-
+      Experimental backend and tooling for a small-scale MMO. I built a playable prototype with an
+      authoritative standalone .NET 10 game server that talks to clients over WebSockets. The client
+      is a Unity game that also runs in the browser.
+    details:
+      - Successfully load-tested it with 300 simulated players on AWS.
+      - Earlier prototypes were in Rust.
+    links:
+      - { label: Try it, href: "https://shapeland.lucyawrey.com" }
+
+  - name: Lantern
+    years: 2019 – 2024
+    status: Predecessor to Soul Tabletop
+    stack: [Next.js, TypeScript, PostgreSQL, GraphQL]
+    summary: >-
+      I co-developed an early-stage virtual tabletop for the web. It is the predecessor to Soul
+      Tabletop.
+    details: []
+    links: []
+
+otherProjects: >-
+  A Minecraft modpack with custom Java and Kotlin mods, a visual novel in Godot, and this site, my
+  Next.js portfolio.
+
+experience:
+  - company: The Really Useful Information Company (TRUIC)
+    title: Software Engineer → Interim Technical Team Lead
+    dates: February 2019 – October 2023
+    bullets:
+      - Built on top of and maintained an internal CMS that powered three public websites (How To Start An LLC, Startup Savant, and truic.com). The CMS uses an ASP.NET backend, a Vue.js frontend, is backed by data on Cosmos DB, and is deployed on Azure App Service.
+      - Shipped full-stack features from prototype to production. Worked on the database, data model, API endpoints, and frontend UI.
+      - Built backend services for the public sites and worked on frontend code for their most interactive features, including our business logo generator and business name generator.
+      - Led a partial move of older JavaScript components to React and TypeScript.
+      - Handled Azure deployments, scaling, and performance tuning through CI/CD pipelines.
+      - Worked with the analytics team on data collection and reporting in Google Analytics and Power BI.
+      - "Interim Technical Team Lead (2022 – 2023): after the CTO left, led our six-person development team. Planned projects, worked on architecture for new features, and kept existing products running smoothly."
+    sites:
+      - { label: How To Start An LLC, href: "https://howtostartanllc.com" }
+      - { label: Startup Savant, href: "https://startupsavant.com" }
+      - { label: truic.com, href: "https://truic.com" }
+
+education:
+  - school: Eastern Michigan University
+    dates: 2017 – 2020
+    detail: Completed three years toward a B.S. in Computer Science
+  - school: Washtenaw Technical Middle College
+    dates: 2014 – 2017
+    detail: High school diploma through a dual-enrollment program with Washtenaw Community College, studying computer science. Credits transferred to EMU
+
+skills:
+  - group: Languages
+    items: ["C#", TypeScript, JavaScript, SQL, HTML, CSS, Python, Java, Rust]
+  - group: Backend
+    items: [ASP.NET, Node.js, REST APIs, gRPC APIs]
+  - group: Frontend
+    items: [Vue.js, Nuxt, React, Next.js, Tailwind CSS]
+  - group: Data
+    items: [Azure Cosmos DB, PostgreSQL, SQLite, Google Analytics, Power BI]
+  - group: Testing
+    items: [xUnit, Jest, Vitest]
+  - group: DevOps
+    items: [Microsoft Azure, AWS, CI/CD pipelines, GitHub Actions]
+  - group: AI-assisted development
+    items: [Claude Code, GitHub Copilot]
+  - group: Leadership
+    items: [Tech team lead, Software architecture, Project planning, Code review, Documentation]
+
+footer:
+  builtWith: Built with Next.js and Tailwind CSS
