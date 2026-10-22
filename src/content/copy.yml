@@ -49,8 +49,7 @@ projects:
     stack: [Nuxt 4, Vue 3, TypeScript, PostgreSQL]
     summary: >-
       An open-source web-based virtual tabletop that is the successor to Lantern. An in-development
-      version is available at soultabletop.com. I designed the architecture and use Claude Code as a
-      coding assistant, reviewing its work.
+      version is available at soultabletop.com.
     details:
       - Users can write their own game character sheets in a custom markup language with support for formulas and dice rolls.
       - Includes an account system with per-resource permissions.
