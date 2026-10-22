@@ -1,17 +1,9 @@
-import Text from "content/text.json";
 import StoryContent from "content/awakening_quest.ink";
-import { isClient, trimQuotes } from "utilities/helpers";
 import { TerminalModel } from "./TerminalModel";
 import { Compiler, Story } from "inkjs/compiler/Compiler";
 
 export class GameModel {
   public story: Story = new Compiler(StoryContent).Compile();
-
-  constructor() {
-    if (isClient()) {
-      //this.gameLoad();
-    }
-  }
 
   public loop(terminal: TerminalModel, choice: number | undefined = undefined) {
     if (this.story.currentChoices.length === 1) {
@@ -46,7 +38,6 @@ export class GameModel {
     } else {
       this.end(terminal);
     }
-    this.gameSave();
   }
 
   public restart(terminal: TerminalModel, resume: boolean = false) {
@@ -58,19 +49,6 @@ export class GameModel {
 
   public end(terminal: TerminalModel) {
     this.restart(terminal);
-    this.gameSave();
     terminal.quitGame();
-  }
-
-  private gameSave() {
-    const json = this.story.state.ToJson();
-    localStorage.setItem(Text.gameDataStorageKey, json);
-  }
-
-  private gameLoad() {
-    const json = localStorage.getItem(Text.gameDataStorageKey);
-    if (json) {
-      this.story.state.LoadJson(json);
-    }
   }
 }

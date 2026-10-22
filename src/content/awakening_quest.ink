@@ -11,5 +11,6 @@ You awake lying in the grass. The grass is comfortable, the air is warm, and abo
 * Just lie there. It's nice.
     It is nice! You relax, and fall asleep.
 - * Press enter to continue.
+- That's all for now! (it's really not much)
 
 -> END

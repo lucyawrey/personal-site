@@ -3,8 +3,8 @@ const nextConfig = {
   reactStrictMode: true,
   turbopack: {
     rules: {
-      // Import ink stories as their source text.
       "*.ink": { type: "raw" },
+      "*.yml": { loaders: ["yaml-loader"], as: "*.js" },
     },
   },
 };

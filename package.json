@@ -26,7 +26,8 @@
     "postcss": "^8.5.29",
     "prettier": "^3.9.10",
     "tailwindcss": "^4.3.3",
-    "typescript": "7.0.2"
+    "typescript": "7.0.2",
+    "yaml-loader": "^0.9.0"
   },
   "packageManager": "pnpm@10.18.2+sha256.93421022fe0156d7cbdf699edc3d7eab39654986eac14f927d02b85f0dac6d61"
 }

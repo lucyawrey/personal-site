@@ -10,7 +10,6 @@ function Layout({ children }: LayoutProps) {
     <>
       <NavMenu />
       {children}
-      <div className="py-4"></div>
       <Footer />
     </>
   );
