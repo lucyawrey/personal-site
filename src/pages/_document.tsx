@@ -4,7 +4,8 @@ function Document() {
   return (
     <Html lang="en" className="scroll-smooth">
       <Head>
-        <link rel="icon" type="image/x-icon" href="favicon.ico"></link>
+        <link rel="icon" href="/favicon.ico" sizes="48x48" />
+        <link rel="icon" href="/icon.svg" type="image/svg+xml" />
       </Head>
       <body className="h-full bg-slate-50 dark:bg-slate-950">
         <Main />
