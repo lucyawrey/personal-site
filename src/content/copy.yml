@@ -63,14 +63,14 @@ projects:
     status: Playable prototype
     stack: [.NET 10, C#, Unity, WebSockets]
     summary: >-
-      Experimental backend and tooling for a small-scale MMO. I built a playable prototype with an
-      authoritative standalone .NET 10 game server that talks to clients over WebSockets. The client
-      is a Unity game that also runs in the browser.
+      An experimental framework for small-scale MMOs. Includes an authoritative .NET 10 game server that
+      talks to clients over WebSockets, a Unity package for building clients, and ShapeLand, a playable
+      prototype game built on top of it that runs on desktop PCs and in the browser.
     details:
-      - Successfully load-tested it with 300 simulated players on AWS.
+      - Successfully load-tested ShapeLand with 300 simulated players on AWS.
       - Earlier prototypes were in Rust.
     links:
-      - { label: Try it, href: "https://shapeland.lucyawrey.com" }
+      - { label: Try ShapeLand, href: "https://shapeland.lucyawrey.com" }
 
   - name: Lantern
     years: 2019 – 2024
