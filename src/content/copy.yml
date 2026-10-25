@@ -63,9 +63,9 @@ projects:
     status: Playable prototype
     stack: [.NET 10, C#, Unity, WebSockets]
     summary: >-
-      An experimental framework for small-scale MMOs: an authoritative standalone .NET 10 game server
-      that talks to clients over WebSockets, plus a Unity package for building clients. ShapeLand is a
-      playable prototype game built on top of it, with a Unity client that also runs in the browser.
+      An experimental framework for small-scale MMOs. Includes an authoritative .NET 10 game server that
+      talks to clients over WebSockets, a Unity package for building clients, and ShapeLand, a playable
+      prototype game built on top of it that runs on desktop PCs and in the browser.
     details:
       - Successfully load-tested ShapeLand with 300 simulated players on AWS.
       - Earlier prototypes were in Rust.
