@@ -14,11 +14,8 @@ profile:
   # Also the page's meta description.
   intro: >-
     I'm a full-stack software engineer with 4.5+ years of professional experience building production
-    web apps on C#/.NET, JavaScript/TypeScript/Node and Microsoft Azure. I've developed features from
-    prototype to production, from backend to frontend, and later led a six-person team as interim
-    technical team lead. I've been programming since 2014. I'm currently building projects with the
-    help of AI coding agents, while keeping core architecture decisions and final code review in my
-    own hands.
+    web apps on C#/.NET, JavaScript/TypeScript/Node and Microsoft Azure. I've been programming since 2014. I'm currently building projects with the
+    help of AI coding agents, focusing on keeping core architecture decisions and final code review in my hands.
 
 sections:
   projects:
