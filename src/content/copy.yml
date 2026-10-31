@@ -16,8 +16,9 @@ profile:
     I'm a full-stack software engineer with 4.5+ years of professional experience building production
     web apps on C#/.NET, JavaScript/TypeScript/Node and Microsoft Azure. I've developed features from
     prototype to production, from backend to frontend, and later led a six-person team as interim
-    technical team lead. I've been programming since 2014, and I'm still building projects to learn
-    new tools.
+    technical team lead. I've been programming since 2014. I'm currently building projects with the
+    help of AI coding agents, while keeping core architecture decisions and final code review in my
+    own hands.
 
 sections:
   projects:
@@ -54,6 +55,7 @@ projects:
       - Users can write their own game character sheets in a custom markup language with support for formulas and dice rolls.
       - Includes an account system with per-resource permissions.
       - Built-in support for the Pathfinder game system.
+      - Built with AI coding agents.
     links:
       - { label: soultabletop.com, href: "https://soultabletop.com" }
       - { label: Source, href: "https://github.com/lucyawrey/soultabletop" }
@@ -69,6 +71,7 @@ projects:
     details:
       - Successfully load-tested ShapeLand with 300 simulated players on AWS.
       - Earlier prototypes were in Rust.
+      - Built its most recent version with AI coding agents.
     links:
       - { label: Try ShapeLand, href: "https://shapeland.lucyawrey.com" }
 
@@ -83,7 +86,7 @@ projects:
     links: []
 
 otherProjects: >-
-  A Minecraft modpack with custom Java and Kotlin mods, a visual novel in Godot, and this site, my
+  A Minecraft modpack with custom Java and Kotlin mods, a visual novel in Godot, an N64 game recompilation, and this site, my
   Next.js portfolio.
 
 experience:
@@ -91,13 +94,13 @@ experience:
     title: Software Engineer → Interim Technical Team Lead
     dates: February 2019 – October 2023
     bullets:
-      - Built on top of and maintained an internal CMS that powered three public websites (How To Start An LLC, Startup Savant, and truic.com). The CMS uses an ASP.NET backend, a Vue.js frontend, is backed by data on Cosmos DB, and is deployed on Azure App Service.
-      - Shipped full-stack features from prototype to production. Worked on the database, data model, API endpoints, and frontend UI.
+      - Built on top of and maintained an internal CMS that powered three public websites (How To Start An LLC, Startup Savant, and truic.com). The CMS uses an ASP.NET backend, a Vue.js frontend, is backed by Cosmos DB, and is deployed on Azure App Service.
+      - Shipped full-stack features from prototype to production. Built the database, data model, API endpoints, and frontend UI.
       - Built backend services for the public sites and worked on frontend code for their most interactive features, including our business logo generator and business name generator.
       - Led a partial move of older JavaScript components to React and TypeScript.
-      - Handled Azure deployments, scaling, and performance tuning through CI/CD pipelines.
-      - Worked with the analytics team on data collection and reporting in Google Analytics and Power BI.
-      - "Interim Technical Team Lead (2022 – 2023): after the CTO left, led our six-person development team. Planned projects, worked on architecture for new features, and kept existing products running smoothly."
+      - Ran Azure deployments, scaling, and performance tuning through CI/CD pipelines.
+      - Wrote Python scripts for the site analytics pipeline and built reports in Google Analytics and Power BI. Used traffic and affiliate click-through metrics to decide which features to build and improve.
+      - "Interim Technical Team Lead (2022 – 2023): after the CTO left, led our six-person development team. Ran code review, planned projects, worked on architecture for new features, and kept existing products running smoothly."
     sites:
       - { label: How To Start An LLC, href: "https://howtostartanllc.com" }
       - { label: Startup Savant, href: "https://startupsavant.com" }
@@ -113,9 +116,9 @@ education:
 
 skills:
   - group: Languages
-    items: ["C#", TypeScript, JavaScript, SQL, HTML, CSS, Python, Java, Rust]
+    items: ["C#", TypeScript, Python, JavaScript, SQL, HTML, CSS, Java, Rust]
   - group: Backend
-    items: [ASP.NET, Node.js, REST APIs, gRPC APIs]
+    items: ["ASP.NET (MVC, Razor)", Entity Framework, Node.js, REST APIs, gRPC APIs]
   - group: Frontend
     items: [Vue.js, Nuxt, React, Next.js, Tailwind CSS]
   - group: Data
@@ -124,8 +127,8 @@ skills:
     items: [xUnit, Jest, Vitest]
   - group: DevOps
     items: [Microsoft Azure, AWS, CI/CD pipelines, GitHub Actions]
-  - group: AI-assisted development
-    items: [Claude Code, GitHub Copilot]
+  - group: AI coding agents
+    items: [Claude Code, Gemini, GitHub Copilot]
   - group: Leadership
     items: [Tech team lead, Software architecture, Project planning, Code review, Documentation]
 
